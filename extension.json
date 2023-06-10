@@ -1,5 +1,5 @@
 {
-	"name": "MirahezeMagic",
+	"name": "WikiTideMagic",
 	"author": [
 		"Agent Isai",
 		"John Lewis",
@@ -11,42 +11,42 @@
 		"Southparkfan",
 		"Universal Omega"
 	],
-	"url": "//github.com/Miraheze/MirahezeMagic",
-	"descriptionmsg": "mirahezemagic-description",
+	"url": "//github.com/WikiForge/WikiTideMagic",
+	"descriptionmsg": "wikitidemagic-description",
 	"license-name": "GPL-3.0-or-later",
 	"type": "other",
 	"requires": {
 		"MediaWiki": ">= 1.39.0"
 	},
 	"AutoloadClasses": {
-		"MirahezeIRCRCFeedFormatter": "includes/MirahezeIRCRCFeedFormatter.php",
-		"MirahezeMagicHooks": "includes/MirahezeMagicHooks.php",
-		"SpecialMirahezeSurvey": "includes/SpecialMirahezeSurvey.php",
+		"WikiTideIRCRCFeedFormatter": "includes/WikiTideIRCRCFeedFormatter.php",
+		"WikiTideMagicHooks": "includes/WikiTideMagicHooks.php",
+		"SpecialWikiTideSurvey": "includes/SpecialWikiTideSurvey.php",
 		"SpecialVanishUser": "includes/SpecialVanishUser.php"
 	},
 	"config": {
-		"MirahezeReportsBlockAlertKeywords": {
+		"WikiTideReportsBlockAlertKeywords": {
 			"description": "Array. Words in block reasons which trigger a report being sent to TSPortal.",
 			"value": []
 		},
-		"MirahezeReportsWriteKey": {
+		"WikiTideReportsWriteKey": {
 			"description": "String. TSPortal write key to be used when connecting to it.",
 			"value": ""
 		},
-		"MirahezeStaffAccessIds": {
+		"WikiTideStaffAccessIds": {
 			"description": "Array. Usernames of users authorised to access staffwiki.",
 			"value": []
 		},
-		"MirahezeSurveyEnabled": {
-			"description": "Boolean. Enable Miraheze Annual Survey?",
+		"WikiTideSurveyEnabled": {
+			"description": "Boolean. Enable WikiTide Annual Survey?",
 			"value": true
 		}
 	},
 	"ConfigRegistry": {
-		"mirahezemagic": "GlobalVarConfig::newInstance"
+		"wikitidemagic": "GlobalVarConfig::newInstance"
 	},
 	"ExtensionMessagesFiles": {
-		"MirahezeMagicAliases": "includes/MirahezeMagicAliases.php"
+		"WikiTideMagicAliases": "includes/WikiTideMagicAliases.php"
 	},
         "LogActionsHandlers": {
                 "vanishuser/*": "LogFormatter"
@@ -61,84 +61,84 @@
                 "vanishuser"
         ],
 	"MessagesDirs": {
-		"MirahezeMagic": [
-			"i18n/miraheze"
+		"WikiTideMagic": [
+			"i18n/wikitide"
 		],
-		"MirahezeOverrideMessagesMagic": [
+		"WikiTideOverrideMessagesMagic": [
 			"i18n/overrides"
 		],
-		"MirahezeLocalizedProjectNames": [
-			"i18n/mirahezeprojectnames"
+		"WikiTideLocalizedProjectNames": [
+			"i18n/wikitideprojectnames"
 		]
 	},
 	"Hooks": {
 		"AbuseFilterShouldFilterAction": [
-			"MirahezeMagicHooks::onAbuseFilterShouldFilterAction"
+			"WikiTideMagicHooks::onAbuseFilterShouldFilterAction"
 		],
 		"BlockIpComplete": [
-			"MirahezeMagicHooks::onBlockIpComplete"
+			"WikiTideMagicHooks::onBlockIpComplete"
 		],
 		"CreateWikiDeletion": [
-			"MirahezeMagicHooks::onCreateWikiDeletion"
+			"WikiTideMagicHooks::onCreateWikiDeletion"
 		],
 		"CreateWikiRename": [
-			"MirahezeMagicHooks::onCreateWikiRename"
+			"WikiTideMagicHooks::onCreateWikiRename"
 		],
 		"CreateWikiStatePrivate": [
-			"MirahezeMagicHooks::onCreateWikiStatePrivate"
+			"WikiTideMagicHooks::onCreateWikiStatePrivate"
 		],
 		"CreateWikiTables": [
-			"MirahezeMagicHooks::onCreateWikiTables"
+			"WikiTideMagicHooks::onCreateWikiTables"
 		],
 		"CreateWikiReadPersistentModel": [
-			"MirahezeMagicHooks::onCreateWikiReadPersistentModel"
+			"WikiTideMagicHooks::onCreateWikiReadPersistentModel"
 		],
 		"CreateWikiWritePersistentModel": [
-			"MirahezeMagicHooks::onCreateWikiWritePersistentModel"
+			"WikiTideMagicHooks::onCreateWikiWritePersistentModel"
 		],
 		"MessageCache::get": [
-			"MirahezeMagicHooks::onMessageCacheGet"
+			"WikiTideMagicHooks::onMessageCacheGet"
 		],
 		"TitleReadWhitelist": [
-			"MirahezeMagicHooks::onTitleReadWhitelist"
+			"WikiTideMagicHooks::onTitleReadWhitelist"
 		],
 		"HtmlPageLinkRendererEnd": [
-			"MirahezeMagicHooks::onHtmlPageLinkRendererEnd"
+			"WikiTideMagicHooks::onHtmlPageLinkRendererEnd"
 		],
 		"InitializeArticleMaybeRedirect": [
-			"MirahezeMagicHooks::onInitializeArticleMaybeRedirect"
+			"WikiTideMagicHooks::onInitializeArticleMaybeRedirect"
 		],
 		"GlobalUserPageWikis": [
-			"MirahezeMagicHooks::onGlobalUserPageWikis"
+			"WikiTideMagicHooks::onGlobalUserPageWikis"
 		],
 		"MimeMagicInit": [
-			"MirahezeMagicHooks::onMimeMagicInit"
+			"WikiTideMagicHooks::onMimeMagicInit"
 		],
 		"SiteNoticeAfter": [
-			"MirahezeMagicHooks::onSiteNoticeAfter"
+			"WikiTideMagicHooks::onSiteNoticeAfter"
 		],
 		"SkinAddFooterLinks": [
-			"MirahezeMagicHooks::onSkinAddFooterLinks"
+			"WikiTideMagicHooks::onSkinAddFooterLinks"
 		],
 		"UserGetRightsRemove": [
-			"MirahezeMagicHooks::onUserGetRightsRemove"
+			"WikiTideMagicHooks::onUserGetRightsRemove"
 		],
 		"RecentChange_save": [
-			"MirahezeMagicHooks::onRecentChange_save"
+			"WikiTideMagicHooks::onRecentChange_save"
 		],
 		"GetPreferences": [
-			"MirahezeMagicHooks::onGetPreferences"
+			"WikiTideMagicHooks::onGetPreferences"
 		],
 		"BeforeInitialize": [
-			"MirahezeMagicHooks::onBeforeInitialize"
+			"WikiTideMagicHooks::onBeforeInitialize"
 		],
 		"ContributionsToolLinks": [
-			"MirahezeMagicHooks::onContributionsToolLinks"
+			"WikiTideMagicHooks::onContributionsToolLinks"
 		]
 	},
 	"SpecialPages": {
-		"MirahezeSurvey": {
-			"class": "SpecialMirahezeSurvey",
+		"WikiTideSurvey": {
+			"class": "SpecialWikiTideSurvey",
 			"services": [
 				"ConfigFactory"
 			]

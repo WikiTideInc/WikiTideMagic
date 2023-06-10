@@ -32,8 +32,8 @@ class SwiftDump extends Maintenance {
 		// Download the Swift container
 		Shell::command(
 			'swift', 'download',
-			"miraheze-$wiki-local-public",
-			'-A', 'https://swift-lb.miraheze.org/auth/v1.0',
+			"wikitide-$wiki-local-public",
+			'-A', 'https://swift-lb.wikitide.org/auth/v1.0',
 			'-U', 'mw:media',
 			'-K', $wmgSwiftPassword,
 			'-D', "/tmp/$wiki",

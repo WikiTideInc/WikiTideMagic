@@ -1,0 +1,32 @@
+{
+	"@metadata": {
+		"authors": [
+			"NGC 54",
+			"Reception123"
+		]
+	},
+	"centralauth-groupname": "WikiTide",
+	"group-autopatrolled-member": "patrul automate",
+	"group-autopatrolled": "Patrule automate",
+	"group-confirmed-member": "utilizatori confirmați",
+	"group-confirmed": "Utilizatori confirmați",
+	"group-oversight-member": "supraveghetor",
+	"group-oversight": "Supraveghetori",
+	"group-rollbacker-member": "revocator",
+	"group-rollbacker": "Revocatori",
+	"group-steward-member": "steward",
+	"group-steward": "Stewards",
+	"group-sysadmin-member": "Administratori de system",
+	"group-sysadmin": "Administratori de system",
+	"group-translationadmin-member": "administrator de traducere",
+	"group-wiki-creator-member": "creator de wiki",
+	"group-wiki-creator": "Creatori de wiki",
+	"wikitide-warnmessage": "<div class=\"wikitable\" style=\"text-align: center; width: 90%; margin-left: auto; margin-right:auto; padding: 15px; border: 4px solid black; background-color: #EEE;\"> <span class=\"plainlinks\">[https://meta.wikitide.org/wiki/Stewards%27_noticeboard '''Echipa de conducere WikiTide'''] a observat că wikiul acesta nu are [[Special:RecentChanges|'''nici o editare''']] sau [[Special:Logs|'''înregistrare de jurnal''']] făcute in ultimele 45 de zile. Daca vreți să preveniți wikiul acesta să fie '''închis''', incepeți să arătați activitate pe wiki. Dacă nu sunt semne de activitate în urmatoarele 15 zile, acest wiki poate fi închis în conform [https://meta.wikitide.org/wiki/Dormancy_Policy '''politicei Dormancy''']. Acest wiki va fi eligibil pentru a fi adoptat de un alt utilizator. Daca nu e adoptat wikiul in 135 de zile de acum, wikiul va fi eligibil pentru '''ștergere'''. Vă rugăm să va familiarzați cu [https://meta.wikitide.org/wiki/Dormancy_Policy politica dormancy WikiTide]. Dacă este activitate pe wiki, puteți să mergeți pe [[MediaWiki:Sitenotice]] si să ștergeți acest mesaj. Dacă aveți alte întrebări nu ezitați să [https://meta.wikitide.org/wiki/Stewards%27_noticeboard '''ne contactați'''].</span></div>",
+	"wikitidemagic-description": "Message MediaWiki, scripturi si hookuri specifice mesajelor WikiTide MediaWiki",
+	"protect-level-user": "Lăsați numai utilizatori logați",
+	"restriction-delete": "Sterge",
+	"restriction-level-user": "Lăsați numai utilizatori logați",
+	"sitematrix-others": "Alte wikiuri WikiTide",
+	"sitematrix-summary": "Această pagină specială conține o lista cu toate wikiurile WikiTide.",
+	"sitematrix": "Lista wikiurilor WikiTide"
+}

@@ -21,7 +21,7 @@ class GenerateExtensionDatabaseList extends Maintenance {
 
 		$extArray = $this->getOption( 'extension' );
 
-		$config = MediaWikiServices::getInstance()->getConfigFactory()->makeConfig( 'mirahezemagic' );
+		$config = MediaWikiServices::getInstance()->getConfigFactory()->makeConfig( 'wikitidemagic' );
 		$dbr = $this->getDB( DB_REPLICA, [], $config->get( 'CreateWikiDatabase' ) );
 
 		foreach ( $extArray as $ext ) {

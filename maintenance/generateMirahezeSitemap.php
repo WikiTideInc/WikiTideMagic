@@ -26,17 +26,17 @@
 require_once __DIR__ . '/../../../maintenance/Maintenance.php';
 
 use MediaWiki\MediaWikiServices;
-use Miraheze\CreateWiki\RemoteWiki;
+use WikiTide\CreateWiki\RemoteWiki;
 
-class GenerateMirahezeSitemap extends Maintenance {
+class GenerateWikiTideSitemap extends Maintenance {
 	public function __construct() {
 		parent::__construct();
 
-		$this->addDescription( 'Generates sitemap for all miraheze wikis (apart from private ones).' );
+		$this->addDescription( 'Generates sitemap for all wikitide wikis (apart from private ones).' );
 	}
 
 	public function execute() {
-		$config = MediaWikiServices::getInstance()->getConfigFactory()->makeConfig( 'mirahezemagic' );
+		$config = MediaWikiServices::getInstance()->getConfigFactory()->makeConfig( 'wikitidemagic' );
 		$localRepo = MediaWikiServices::getInstance()->getRepoGroup()->getLocalRepo();
 		$backend = $localRepo->getBackend();
 
@@ -114,5 +114,5 @@ class GenerateMirahezeSitemap extends Maintenance {
 	}
 }
 
-$maintClass = 'GenerateMirahezeSitemap';
+$maintClass = 'GenerateWikiTideSitemap';
 require_once RUN_MAINTENANCE_IF_MAIN;

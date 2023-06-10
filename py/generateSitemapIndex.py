@@ -7,7 +7,7 @@ from swiftclient import Connection
 from time import sleep
 
 parser = argparse.ArgumentParser(
-    description='Generate Miraheze sitemap index of all public wikis, and upload the object to the "root" container in Swift')
+    description='Generate WikiTide sitemap index of all public wikis, and upload the object to the "root" container in Swift')
 parser.add_argument(
     '-A', '--auth', dest='auth', default=os.environ.get('ST_AUTH', None),
     help='URL for obtaining an auth token for Swift (ST_AUTH)')
@@ -21,7 +21,7 @@ args = parser.parse_args()
 
 reqsession = requests.Session()
 print('getting wikilist')
-URL = 'https://meta.miraheze.org/w/api.php'
+URL = 'https://meta.wikitide.org/w/api.php'
 PARAMS = {
     'action': 'wikidiscover',
     'format': 'json',
@@ -44,14 +44,14 @@ for wikidata in data:
         count = 0
         hits = hits + 1
     wiki = wikidata['dbname']
-    urlreq = f'https://static.miraheze.org/{wiki}/sitemaps/sitemap.xml'
+    urlreq = f'https://static.wikitide.org/{wiki}/sitemaps/sitemap.xml'
     req = reqsession.get(url=urlreq)
     if req.status_code == 429:
         print(f'Rate Limited on {wiki} backing off for {1 + int(rls)} seconds')
         sleep(1 + int(rls))  # sleep 1 second for every time rate limited
         req = reqsession.get(url=urlreq)
         rls = rls + 1
-    while req.status_code == 502 or req.status_code == 503:  # miraheze might be down, pause for a bit
+    while req.status_code == 502 or req.status_code == 503:  # wikitide might be down, pause for a bit
         secondswait = 3 * down
         down = down + 1
         print(f'Got 5xx error on {urlreq} - waiting for {secondswait} seconds')

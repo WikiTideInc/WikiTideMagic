@@ -2,7 +2,7 @@
 require_once __DIR__ . '/../../../maintenance/Maintenance.php';
 
 use MediaWiki\MediaWikiServices;
-use Miraheze\CreateWiki\CreateWikiJson;
+use WikiTide\CreateWiki\CreateWikiJson;
 
 class ResetWikiCaches extends Maintenance {
 	public function __construct() {
@@ -12,7 +12,7 @@ class ResetWikiCaches extends Maintenance {
 	}
 
 	public function execute() {
-		$config = MediaWikiServices::getInstance()->getConfigFactory()->makeConfig( 'mirahezemagic' );
+		$config = MediaWikiServices::getInstance()->getConfigFactory()->makeConfig( 'wikitidemagic' );
 
 		$cWJ = new CreateWikiJson( $config->get( 'DBname' ) );
 		$cWJ->resetWiki();

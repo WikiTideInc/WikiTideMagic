@@ -8,8 +8,8 @@ if ( $IP === false ) {
 require_once "$IP/maintenance/Maintenance.php";
 
 use MediaWiki\MediaWikiServices;
-use Miraheze\CreateWiki\RemoteWiki;
-use Miraheze\ManageWiki\Helpers\ManageWikiSettings;
+use WikiTide\CreateWiki\RemoteWiki;
+use WikiTide\ManageWiki\Helpers\ManageWikiSettings;
 
 class UpdatePrivateAuthUrls extends Maintenance {
 	public function execute() {
@@ -22,9 +22,9 @@ class UpdatePrivateAuthUrls extends Maintenance {
 			foreach ( $manageWikiSettings->list() as $var => $val ) {
 				if (
 					is_string( $val ) &&
-					str_contains( $val, "static.miraheze.org/$dbName" )
+					str_contains( $val, "static.wikitide.org/$dbName" )
 				) {
-					$new = preg_replace( "/((http)?(s)?(:)?\/\/)?static.miraheze.org\/$dbName/", $config->get( 'Server' ) . '/w/img_auth.php', $val );
+					$new = preg_replace( "/((http)?(s)?(:)?\/\/)?static.wikitide.org\/$dbName/", $config->get( 'Server' ) . '/w/img_auth.php', $val );
 
 					$this->output( "Updating {$var} for {$dbName} '{$val} => {$new}'\n" );
 

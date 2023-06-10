@@ -1,5 +1,5 @@
 {
-	"name": "miraheze/mirahezemagic",
+	"name": "wikiforge/wikitidemagic",
 	"description": "",
 	"license": "GPL-3.0-or-later",
 	"require-dev": {

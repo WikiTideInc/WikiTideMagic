@@ -5,11 +5,11 @@
 			"U.ayaao.p"
 		]
 	},
-	"miraheze-centralauth-login-error-locked": "{{GENDER:$1|Сіздің}} парақшаңыз [[m:Special:MyLanguage/Global locks|жаһандық құлыптаулы]] болғаннан жүйеге кіре алмайсыз. Қосымша ақпарат алу немесе шағымдану үшін <code>cvt[at]miraheze.org</code> хабарласыңыз.",
-	"miraheze-dberr-again": "Бірнеше минуттан кейін қайталап көріңіз, бұл қателер әдетте сол уақытта жойылады. Егер сіз бұл қатені үнемі алып жатсаңыз, қосымша ақпарат үшін біздің Twitter (https://twitter.com/Miraheze) парақшамызды тексеріңіз немесе irc.libera.chat ішіндегі #miraheze-sre'ге қосылу арқылы Miraheze жүйе әкімшілеріне хабарласыңыз.",
-	"miraheze-dberr-problems": "Бұл уики уақытша қолжетімсіз",
-	"miraheze-restriction-delete": "Жою",
-	"miraheze-restriction-protect": "Қорғау",
-	"miraheze-skinname-snapwikiskin": "Snap!",
-	"miraheze-wikibase-sitelinks-miraheze": "Miraheze уикилері"
+	"wikitide-centralauth-login-error-locked": "{{GENDER:$1|Сіздің}} парақшаңыз [[m:Special:MyLanguage/Global locks|жаһандық құлыптаулы]] болғаннан жүйеге кіре алмайсыз. Қосымша ақпарат алу немесе шағымдану үшін <code>cvt[at]wikitide.org</code> хабарласыңыз.",
+	"wikitide-dberr-again": "Бірнеше минуттан кейін қайталап көріңіз, бұл қателер әдетте сол уақытта жойылады. Егер сіз бұл қатені үнемі алып жатсаңыз, қосымша ақпарат үшін біздің Twitter (https://twitter.com/WikiTide) парақшамызды тексеріңіз немесе irc.libera.chat ішіндегі #wikitide-sre'ге қосылу арқылы WikiTide жүйе әкімшілеріне хабарласыңыз.",
+	"wikitide-dberr-problems": "Бұл уики уақытша қолжетімсіз",
+	"wikitide-restriction-delete": "Жою",
+	"wikitide-restriction-protect": "Қорғау",
+	"wikitide-skinname-snapwikiskin": "Snap!",
+	"wikitide-wikibase-sitelinks-wikitide": "WikiTide уикилері"
 }

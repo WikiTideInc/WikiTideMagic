@@ -17,7 +17,7 @@
  * http://www.gnu.org/copyleft/gpl.html
  *
  * @file
- * @ingroup MirahezeMagic
+ * @ingroup WikiTideMagic
  * @author John Lewis
  * @author Paladox
  * @version 1.0
@@ -48,7 +48,7 @@ class PopulateWikibaseSitesTable extends Maintenance {
 		$this->addDescription( 'Populate the sites table from another wiki that runs the SiteMatrix extension' );
 
 		$this->addOption( 'load-from', "Full URL to the API of the wiki to fetch the site info from. "
-				. "Default is https://meta.miraheze.org/w/api.php", false, true );
+				. "Default is https://meta.wikitide.org/w/api.php", false, true );
 		$this->addOption( 'script-path', 'Script path to use for wikis in the site matrix. '
 				. ' (e.g. "/w/$1")', false, true );
 		$this->addOption( 'article-path', 'Article path for wikis in the site matrix. '
@@ -62,11 +62,11 @@ class PopulateWikibaseSitesTable extends Maintenance {
 	}
 
 	public function execute() {
-		$url = $this->getOption( 'load-from', 'https://meta.miraheze.org/w/api.php' );
+		$url = $this->getOption( 'load-from', 'https://meta.wikitide.org/w/api.php' );
 		$siteGroup = $this->getOption( 'site-group' );
 		$wikiId = $this->getOption( 'wiki' );
 
-		$groups = [ 'miraheze' ];
+		$groups = [ 'wikitide' ];
 		$validGroups = $this->getOption( 'valid-groups', $groups );
 
 		try {
@@ -172,7 +172,7 @@ class PopulateWikibaseSitesTable extends Maintenance {
 	private function getSiteFromSiteData( array $siteData ) {
 		$site = new MediaWikiSite();
 		$site->setGlobalId( $siteData['dbname'] );
-		$site->setGroup( 'miraheze' );
+		$site->setGroup( 'wikitide' );
 		$url = $siteData['url'];
 		$site->setFilePath( $url . $this->getOption( 'script-path', '/w/$1' ) );
 		$site->setPagePath( $url . $this->getOption( 'article-path', '/wiki/$1' ) );

@@ -17,7 +17,7 @@
  * http://www.gnu.org/copyleft/gpl.html
  *
  * @file
- * @ingroup MirahezeMagic
+ * @ingroup WikiTideMagic
  * @author Paladox
  * @version 1.0
  */
@@ -33,7 +33,7 @@ class GenerateManageWikiBackup extends Maintenance {
 	}
 
 	public function execute() {
-		$config = MediaWikiServices::getInstance()->getConfigFactory()->makeConfig( 'mirahezemagic' );
+		$config = MediaWikiServices::getInstance()->getConfigFactory()->makeConfig( 'wikitidemagic' );
 
 		$dbName = $config->get( 'DBname' );
 		$dbw = $this->getDB( DB_PRIMARY, [], $config->get( 'CreateWikiDatabase' ) );

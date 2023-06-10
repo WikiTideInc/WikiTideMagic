@@ -16,7 +16,7 @@
  * http://www.gnu.org/copyleft/gpl.html
  *
  * @file
- * @ingroup MirahezeMagic
+ * @ingroup WikiTideMagic
  * @author Southparkfan
  * @version 1.0
  */
