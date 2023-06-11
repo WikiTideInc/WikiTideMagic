@@ -495,8 +495,8 @@ class WikiTideMagicHooks {
 	public static function onGlobalUserPageWikis( &$list ) {
 		$config = MediaWikiServices::getInstance()->getConfigFactory()->makeConfig( 'wikitidemagic' );
 		$cwCacheDir = $config->get( 'CreateWikiCacheDirectory' );
-		if ( file_exists( "{$cwCacheDir}/databases.json" ) ) {
-			$databasesArray = json_decode( file_get_contents( "{$cwCacheDir}/databases.json" ), true );
+		if ( file_exists( "{$cwCacheDir}/databases-wikitide.json" ) ) {
+			$databasesArray = json_decode( file_get_contents( "{$cwCacheDir}/databases-wikitide.json" ), true );
 			$list = array_keys( $databasesArray['combi'] );
 			return false;
 		}
