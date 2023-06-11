@@ -381,7 +381,7 @@ class WikiTideMagicHooks {
 	}
 
 	/**
-	 * Enables global interwiki for [[mh:wiki:Page]]
+	 * Enables global interwiki for [[wt:wiki:Page]]
 	 */
 	public static function onHtmlPageLinkRendererEnd( $linkRenderer, $target, $isKnown, &$text, &$attribs, &$ret ) {
 		$target = (string)$target;
@@ -409,7 +409,7 @@ class WikiTideMagicHooks {
 
 		$prefix = strtolower( $target[0] );
 
-		if ( $prefix != 'mh' ) {
+		if ( $prefix != 'wt' ) {
 			// Not interesting
 			return true;
 		}
@@ -427,7 +427,7 @@ class WikiTideMagicHooks {
 
 		$target = str_replace( ' ', '_', $target );
 		$target = urlencode( $target );
-		$linkURL = "https://$wiki.wikitide.org/wiki/$target";
+		$linkURL = "https://$wiki.wikitide.com/wiki/$target";
 
 		$attribs = [
 			'href' => $linkURL,
@@ -439,13 +439,13 @@ class WikiTideMagicHooks {
 	}
 
 	/**
-	 * Hard redirects all pages like Mh:Wiki:Page as global interwiki.
+	 * Hard redirects all pages like Wt:Wiki:Page as global interwiki.
 	 */
 	public static function onInitializeArticleMaybeRedirect( $title, $request, &$ignoreRedirect, &$target, $article ) {
 		$title = explode( ':', $title );
 		$prefix = strtolower( $title[0] );
 
-		if ( count( $title ) < 3 || $prefix !== 'mh' ) {
+		if ( count( $title ) < 3 || $prefix !== 'wt' ) {
 			return true;
 		}
 
@@ -454,7 +454,7 @@ class WikiTideMagicHooks {
 		$page = str_replace( ' ', '_', $page );
 		$page = urlencode( $page );
 
-		$target = "https://$wiki.wikitide.org/wiki/$page";
+		$target = "https://$wiki.wikitide.com/wiki/$page";
 
 		return true;
 	}
