@@ -5,7 +5,7 @@
 			"U.ayaao.p"
 		]
 	},
-	"wikitide-centralauth-login-error-locked": "{{GENDER:$1|Сіздің}} парақшаңыз [[wt:wt:meta:Special:MyLanguage/Global locks|жаһандық құлыптаулы]] болғаннан жүйеге кіре алмайсыз. Қосымша ақпарат алу немесе шағымдану үшін <code>cvt[at]wikitide.org</code> хабарласыңыз.",
+	"wikitide-centralauth-login-error-locked": "{{GENDER:$1|Сіздің}} парақшаңыз [[wt:meta:Special:MyLanguage/Global locks|жаһандық құлыптаулы]] болғаннан жүйеге кіре алмайсыз. Қосымша ақпарат алу немесе шағымдану үшін <code>cvt[at]wikitide.org</code> хабарласыңыз.",
 	"wikitide-dberr-again": "Бірнеше минуттан кейін қайталап көріңіз, бұл қателер әдетте сол уақытта жойылады. Егер сіз бұл қатені үнемі алып жатсаңыз, қосымша ақпарат үшін біздің Twitter (https://twitter.com/WikiTide) парақшамызды тексеріңіз немесе irc.libera.chat ішіндегі #wikitide-sre'ге қосылу арқылы WikiTide жүйе әкімшілеріне хабарласыңыз.",
 	"wikitide-dberr-problems": "Бұл уики уақытша қолжетімсіз",
 	"wikitide-restriction-delete": "Жою",
