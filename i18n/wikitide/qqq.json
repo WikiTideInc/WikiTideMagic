@@ -29,12 +29,12 @@
 	"group-autopatrolled": "Autopatrolled users",
 	"group-confirmed-member": "{{GENDER:$1|confirmed user}}",
 	"group-confirmed": "Confirmed users",
-	"group-flood-member": "See https://meta.wikitide.org/wiki/Meta:Flood_flag",
-	"group-flood": "See https://meta.wikitide.org/wiki/Meta:Flood_flag",
+	"group-flood-member": "See https://meta.wikitide.org/wiki/wt:meta:Flood_flag",
+	"group-flood": "See https://meta.wikitide.org/wiki/wt:meta:Flood_flag",
 	"group-founder": "Group name for 'founder'",
 	"group-founder-member": "Name for members of the 'founder' group",
-	"group-global-flood-member": "See https://meta.wikitide.org/wiki/Meta:Flood_flag",
-	"group-global-flood": "See https://meta.wikitide.org/wiki/Meta:Flood_flag",
+	"group-global-flood-member": "See https://meta.wikitide.org/wiki/wt:meta:Flood_flag",
+	"group-global-flood": "See https://meta.wikitide.org/wiki/wt:meta:Flood_flag",
 	"group-global-ipblock-exempt-member": "{{GENDER:$1|global IP block exempt}}",
 	"group-global-ipblock-exempt": "Global IP block exemptions",
 	"group-member": "Members\n\n{{Identical|Member}}",
@@ -121,5 +121,5 @@
 	"sitematrix": "List of WikiTide wikis",
 	"specialpages-group-wikimanage": "Wiki Management",
 	"termsofservice": "Terms of Use",
-	"termsofservicepage": "m:Terms of Use"
+	"termsofservicepage": "wt:wt:meta:Terms of Use"
 }

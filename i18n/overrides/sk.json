@@ -7,7 +7,7 @@
 	},
 	"wikitide-centralauth-login-error-locked": "{{GENDER:$1|Váš}} účet nie je možné prihlásiť, pretože {{GENDER:$1|Váš}} účet je globálne uzamknutý. Prosím kontaktujte <code>cvt[na]wikitide.org</code> pre viac informácií, alebo pre žiadosť o odomknutie.",
 	"wikitide-dberr-again": "Skúste počkať niekoľko minúť a načítajte znovu. Pre viac informácií o tejto chybe navštívte našu twitter stránku (https://twitter.com/WikiTide) alebo kontaktujte správcu systému #wikitide na irc.libera.chat.",
-	"wikitide-importtext": "Prosím exportujte súbor zo zdroja wiki použitím [[Special:Export|nástroje pre export]].\nUložte ho do Vášho počítača a nahrajte sem. <br /> Prosím berte na vedomie, že ak je súbor väčší než (~ >5MB) musíte požiadať o import tu -> [[M:Moving_a_wiki_to_WikiTide#Request_import]].",
+	"wikitide-importtext": "Prosím exportujte súbor zo zdroja wiki použitím [[Special:Export|nástroje pre export]].\nUložte ho do Vášho počítača a nahrajte sem. <br /> Prosím berte na vedomie, že ak je súbor väčší než (~ >5MB) musíte požiadať o import tu -> [[wt:wt:meta:Moving_a_wiki_to_WikiTide#Request_import]].",
 	"wikitide-newsignuppage-loginform-tos": "Čítal/a som, rozumiem a súhlasím s [https://meta.wikitide.org/wiki/Terms_of_Use Podmienkami používania] a so [https://meta.wikitide.org/wiki/Privacy_Policy Zásadami ochrany súkromia]",
 	"wikitide-newsignuppage-must-accept-tos": "Pre vytvorenie účtu musíte súhlasiť s podmienkami používania!",
 	"wikitide-oathauth-step1": "DÔLEŽITÉ! Prosím prečítajte si stránku OATHAuth pred tým než toto povolíte! Krok 1: Stiahnite si dvoj faktorový autentifikačný program",

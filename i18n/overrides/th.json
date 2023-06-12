@@ -6,7 +6,7 @@
 		]
 	},
 	"wikitide-centralauth-groupname": "มิราเฮซ",
-	"wikitide-centralauth-login-error-locked": "{{GENDER:$1|คุณ}}ไม่สามารถเข้าสู่ระบบได้เนื่องจากบัญชี{{GENDER:$1|ของคุณ}}[[m:Special:MyLanguage/Global locks|ถูกล็อกข้ามโครงการ]] กรุณาติดต่อที่ <code>cvt[at]wikitide.org</code> สำหรับข้อมูลเพิ่มเติม",
+	"wikitide-centralauth-login-error-locked": "{{GENDER:$1|คุณ}}ไม่สามารถเข้าสู่ระบบได้เนื่องจากบัญชี{{GENDER:$1|ของคุณ}}[[wt:wt:meta:Special:MyLanguage/Global locks|ถูกล็อกข้ามโครงการ]] กรุณาติดต่อที่ <code>cvt[at]wikitide.org</code> สำหรับข้อมูลเพิ่มเติม",
 	"wikitide-dberr-again": "โปรดลองใหม่อีกครั้งในอีกสักครู่หนึ่ง ข้อผิดพลาดเหล่านี้มักใช้เวลาแก้ไขไม่นาน หากคุณยังได้รับข้อความนี้ติดต่อกันเป็นเวลานาน โปรดตรวจสอบทวิตเตอร์ของเรา (https://twitter.com/WikiTide) หรือติดต่อวิศวกรผู้ดูแลระบบของมิราเฮซโดยไปที่ #wikitide-sre บน irc.libera.chat",
 	"wikitide-dberr-problems": "วิกินี้ไม่พร้อมใช้งานชั่วคราว",
 	"wikitide-newsignuppage-loginform-tos": "ฉันได้อ่านและยอมรับใน[https://meta.wikitide.org/wiki/Terms_of_Use ข้อกำหนดการใช้งาน]และ[https://meta.wikitide.org/wiki/Privacy_Policy นโยบายความเป็นส่วนตัว]แล้ว",
