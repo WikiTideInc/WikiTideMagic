@@ -6,7 +6,7 @@ CentralAuth:
   repo: auto
 CreateWiki:
   branch: master
-  repo: https://github.com/miraheze/CreateWiki
+  repo: https://github.com/WikiForge/CreateWiki
 Echo:
   branch: auto
   repo: auto
@@ -15,4 +15,4 @@ GlobalUserPage:
   repo: auto
 ManageWiki:
   branch: master
-  repo: https://github.com/miraheze/ManageWiki
+  repo: https://github.com/WikiForge/ManageWiki
