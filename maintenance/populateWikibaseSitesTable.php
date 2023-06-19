@@ -48,7 +48,7 @@ class PopulateWikibaseSitesTable extends Maintenance {
 		$this->addDescription( 'Populate the sites table from another wiki that runs the SiteMatrix extension' );
 
 		$this->addOption( 'load-from', "Full URL to the API of the wiki to fetch the site info from. "
-				. "Default is https://meta.wikitide.org/w/api.php", false, true );
+				. "Default is https://meta.wikitide.com/w/api.php", false, true );
 		$this->addOption( 'script-path', 'Script path to use for wikis in the site matrix. '
 				. ' (e.g. "/w/$1")', false, true );
 		$this->addOption( 'article-path', 'Article path for wikis in the site matrix. '
@@ -62,7 +62,7 @@ class PopulateWikibaseSitesTable extends Maintenance {
 	}
 
 	public function execute() {
-		$url = $this->getOption( 'load-from', 'https://meta.wikitide.org/w/api.php' );
+		$url = $this->getOption( 'load-from', 'https://meta.wikitide.com/w/api.php' );
 		$siteGroup = $this->getOption( 'site-group' );
 		$wikiId = $this->getOption( 'wiki' );
 
