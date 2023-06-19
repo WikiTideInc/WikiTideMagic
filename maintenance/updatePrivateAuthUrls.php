@@ -8,8 +8,8 @@ if ( $IP === false ) {
 require_once "$IP/maintenance/Maintenance.php";
 
 use MediaWiki\MediaWikiServices;
-use WikiTide\CreateWiki\RemoteWiki;
-use WikiTide\ManageWiki\Helpers\ManageWikiSettings;
+use Miraheze\CreateWiki\RemoteWiki;
+use Miraheze\ManageWiki\Helpers\ManageWikiSettings;
 
 class UpdatePrivateAuthUrls extends Maintenance {
 	public function execute() {
