@@ -32,7 +32,7 @@ class GenerateWikiTideSitemap extends Maintenance {
 	public function __construct() {
 		parent::__construct();
 
-		$this->addDescription( 'Generates sitemap for all WikiForge wikis (apart from private ones).' );
+		$this->addDescription( 'Generates sitemap for all WikiTide wikis (apart from private ones).' );
 	}
 
 	public function execute() {
