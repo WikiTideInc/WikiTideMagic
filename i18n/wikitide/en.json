@@ -180,7 +180,7 @@
 	"wikitidesurvey": "WikiTide Annual Survey 2022",
 	"prefs-forcesafemode-label": "Always force safemode?",
 	"protect-level-user": "Allow only logged in users",
-	"requestimportdump-text": "Welcome to ImportDump! To get started with your import, please fill out this form so we can review your request. Your wiki request will be reviewed by a member of Site Reliability Engineering, and it can be tracked at the page that will be given when submitting your request.\n\nIf your XML dump times out during upload, please create a task on [[Phabricator]].\n\nIf you wish to import images as well, please create a task on [[Phabricator]].",
+	"requestimportdump-text": "Welcome to ImportDump! To get started with your import, please fill out this form so we can review your request. Your wiki request will be reviewed by a member of Site Reliability Engineering, and it can be tracked at the page that will be given when submitting your request.\n\nIf your XML dump times out during upload, please create a task on [[Phorge]].\n\nIf you wish to import images as well, please create a task on [[Phorge]].",
 	"restriction-delete": "Delete",
 	"restriction-level-user": "Allow only logged in users",
 	"right-user": "Edit pages protected as \"{{int:protect-level-user}}\"",
