@@ -33,10 +33,6 @@
 			"description": "String. TSPortal write key to be used when connecting to it.",
 			"value": ""
 		},
-		"WikiTideStaffAccessIds": {
-			"description": "Array. Usernames of users authorised to access staffwiki.",
-			"value": []
-		},
 		"WikiTideSurveyEnabled": {
 			"description": "Boolean. Enable WikiTide Annual Survey?",
 			"value": true
@@ -71,69 +67,67 @@
 			"i18n/wikitideprojectnames"
 		]
 	},
+	"HookHandlers": {
+		"WikiTideMagicHooks": {
+			"class": "WikiTideMagicHooks",
+			"factory": "WikiTideMagicHooks::factory",
+			"services": [
+				"MainConfig",
+				"UserOptionsManager"
+			]
+		}
+	},
 	"Hooks": {
 		"AbuseFilterShouldFilterAction": [
-			"WikiTideMagicHooks::onAbuseFilterShouldFilterAction"
-		],
-		"BlockIpComplete": [
-			"WikiTideMagicHooks::onBlockIpComplete"
-		],
-		"CreateWikiDeletion": [
-			"WikiTideMagicHooks::onCreateWikiDeletion"
-		],
-		"CreateWikiRename": [
-			"WikiTideMagicHooks::onCreateWikiRename"
-		],
-		"CreateWikiStatePrivate": [
-			"WikiTideMagicHooks::onCreateWikiStatePrivate"
-		],
-		"CreateWikiTables": [
-			"WikiTideMagicHooks::onCreateWikiTables"
-		],
-		"CreateWikiReadPersistentModel": [
-			"WikiTideMagicHooks::onCreateWikiReadPersistentModel"
-		],
-		"CreateWikiWritePersistentModel": [
-			"WikiTideMagicHooks::onCreateWikiWritePersistentModel"
-		],
-		"MessageCache::get": [
-			"WikiTideMagicHooks::onMessageCacheGet"
-		],
-		"TitleReadWhitelist": [
-			"WikiTideMagicHooks::onTitleReadWhitelist"
-		],
-		"HtmlPageLinkRendererEnd": [
-			"WikiTideMagicHooks::onHtmlPageLinkRendererEnd"
-		],
-		"InitializeArticleMaybeRedirect": [
-			"WikiTideMagicHooks::onInitializeArticleMaybeRedirect"
-		],
-		"GlobalUserPageWikis": [
-			"WikiTideMagicHooks::onGlobalUserPageWikis"
-		],
-		"MimeMagicInit": [
-			"WikiTideMagicHooks::onMimeMagicInit"
-		],
-		"SiteNoticeAfter": [
-			"WikiTideMagicHooks::onSiteNoticeAfter"
-		],
-		"SkinAddFooterLinks": [
-			"WikiTideMagicHooks::onSkinAddFooterLinks"
-		],
-		"UserGetRightsRemove": [
-			"WikiTideMagicHooks::onUserGetRightsRemove"
-		],
-		"RecentChange_save": [
-			"WikiTideMagicHooks::onRecentChange_save"
-		],
-		"GetPreferences": [
-			"WikiTideMagicHooks::onGetPreferences"
+			"handler": "WikiTideMagicHooks"
 		],
 		"BeforeInitialize": [
-			"WikiTideMagicHooks::onBeforeInitialize"
+			"handler": "WikiTideMagicHooks"
 		],
 		"ContributionsToolLinks": [
-			"WikiTideMagicHooks::onContributionsToolLinks"
+			"handler": "WikiTideMagicHooks"
+		],
+		"CreateWikiDeletion": [
+			"handler": "WikiTideMagicHooks"
+		],
+		"CreateWikiReadPersistentModel": [
+			"handler": "WikiTideMagicHooks"
+		],
+		"CreateWikiRename": [
+			"handler": "WikiTideMagicHooks"
+		],
+		"CreateWikiStatePrivate": [
+			"handler": "WikiTideMagicHooks"
+		],
+		"CreateWikiTables": [
+			"handler": "WikiTideMagicHooks"
+		],
+		"CreateWikiWritePersistentModel": [
+			"handler": "WikiTideMagicHooks"
+		],
+		"GetPreferences": [
+			"handler": "WikiTideMagicHooks"
+		],
+		"GlobalUserPageWikis": [
+			"handler": "WikiTideMagicHooks"
+		],
+		"HtmlPageLinkRendererEnd": [
+			"handler": "WikiTideMagicHooks"
+		],
+		"InitializeArticleMaybeRedirect": [
+			"handler": "WikiTideMagicHooks"
+		],
+		"MessageCache::get": [
+			"handler": "WikiTideMagicHooks"
+		],
+		"SiteNoticeAfter": [
+			"handler": "WikiTideMagicHooks"
+		],
+		"SkinAddFooterLinks": [
+			"handler": "WikiTideMagicHooks"
+		],
+		"TitleReadWhitelist": [
+			"handler": "WikiTideMagicHooks"
 		]
 	},
 	"SpecialPages": {
