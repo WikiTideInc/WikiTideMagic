@@ -26,21 +26,20 @@
 require_once __DIR__ . '/../../../maintenance/Maintenance.php';
 
 use MediaWiki\MediaWikiServices;
-use WikiTide\CreateWiki\RemoteWiki;
+use Miraheze\CreateWiki\RemoteWiki;
 
 class GenerateWikiTideSitemap extends Maintenance {
 	public function __construct() {
 		parent::__construct();
 
-		$this->addDescription( 'Generates sitemap for all wikitide wikis (apart from private ones).' );
+		$this->addDescription( 'Generates sitemap for all WikiForge wikis (apart from private ones).' );
 	}
 
 	public function execute() {
-		$config = MediaWikiServices::getInstance()->getConfigFactory()->makeConfig( 'wikitidemagic' );
 		$localRepo = MediaWikiServices::getInstance()->getRepoGroup()->getLocalRepo();
 		$backend = $localRepo->getBackend();
 
-		$dbName = $config->get( 'DBname' );
+		$dbName = $this->getConfig()->get( 'DBname' );
 		$filePath = wfTempDir() . '/sitemaps';
 
 		$wiki = new RemoteWiki( $dbName );
@@ -86,12 +85,12 @@ class GenerateWikiTideSitemap extends Maintenance {
 			// Generate new dump
 			$generateSitemap = $this->runChild(
 				GenerateSitemap::class,
-				'/srv/mediawiki/w/maintenance/generateSitemap.php'
+				MW_INSTALL_PATH . '/maintenance/generateSitemap.php'
 			);
 
 			$generateSitemap->setOption( 'fspath', $filePath );
 			$generateSitemap->setOption( 'urlpath', '/sitemaps/' . $dbName . '/sitemaps/' );
-			$generateSitemap->setOption( 'server', $config->get( 'Server' ) );
+			$generateSitemap->setOption( 'server', $this->getConfig()->get( 'Server' ) );
 			$generateSitemap->setOption( 'compress', 'yes' );
 			$generateSitemap->execute();
 
@@ -114,5 +113,5 @@ class GenerateWikiTideSitemap extends Maintenance {
 	}
 }
 
-$maintClass = 'GenerateWikiTideSitemap';
+$maintClass = GenerateWikiTideSitemap::class;
 require_once RUN_MAINTENANCE_IF_MAIN;
