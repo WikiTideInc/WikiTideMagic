@@ -78,57 +78,57 @@
 		}
 	},
 	"Hooks": {
-		"AbuseFilterShouldFilterAction": [
+		"AbuseFilterShouldFilterAction": {
 			"handler": "WikiTideMagicHooks"
-		],
-		"BeforeInitialize": [
+		},
+		"BeforeInitialize": {
 			"handler": "WikiTideMagicHooks"
-		],
-		"ContributionsToolLinks": [
+		},
+		"ContributionsToolLinks": {
 			"handler": "WikiTideMagicHooks"
-		],
-		"CreateWikiDeletion": [
+		},
+		"CreateWikiDeletion": {
 			"handler": "WikiTideMagicHooks"
-		],
-		"CreateWikiReadPersistentModel": [
+		},
+		"CreateWikiReadPersistentModel": {
 			"handler": "WikiTideMagicHooks"
-		],
-		"CreateWikiRename": [
+		},
+		"CreateWikiRename": {
 			"handler": "WikiTideMagicHooks"
-		],
-		"CreateWikiStatePrivate": [
+		},
+		"CreateWikiStatePrivate": {
 			"handler": "WikiTideMagicHooks"
-		],
-		"CreateWikiTables": [
+		},
+		"CreateWikiTables": {
 			"handler": "WikiTideMagicHooks"
-		],
-		"CreateWikiWritePersistentModel": [
+		},
+		"CreateWikiWritePersistentModel": {
 			"handler": "WikiTideMagicHooks"
-		],
-		"GetPreferences": [
+		},
+		"GetPreferences": {
 			"handler": "WikiTideMagicHooks"
-		],
-		"GlobalUserPageWikis": [
+		},
+		"GlobalUserPageWikis": {
 			"handler": "WikiTideMagicHooks"
-		],
-		"HtmlPageLinkRendererEnd": [
+		},
+		"HtmlPageLinkRendererEnd": {
 			"handler": "WikiTideMagicHooks"
-		],
-		"InitializeArticleMaybeRedirect": [
+		},
+		"InitializeArticleMaybeRedirect": {
 			"handler": "WikiTideMagicHooks"
-		],
-		"MessageCache::get": [
+		},
+		"MessageCache::get": {
 			"handler": "WikiTideMagicHooks"
-		],
-		"SiteNoticeAfter": [
+		},
+		"SiteNoticeAfter": {
 			"handler": "WikiTideMagicHooks"
-		],
-		"SkinAddFooterLinks": [
+		},
+		"SkinAddFooterLinks": {
 			"handler": "WikiTideMagicHooks"
-		],
-		"TitleReadWhitelist": [
+		},
+		"TitleReadWhitelist": {
 			"handler": "WikiTideMagicHooks"
-		]
+		}
 	},
 	"SpecialPages": {
 		"WikiTideSurvey": {
