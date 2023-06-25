@@ -111,9 +111,6 @@
 		"GlobalUserPageWikis": {
 			"handler": "WikiTideMagicHooks"
 		},
-		"InitializeArticleMaybeRedirect": {
-			"handler": "WikiTideMagicHooks"
-		},
 		"MessageCache::get": {
 			"handler": "WikiTideMagicHooks"
 		},

@@ -8,7 +8,6 @@ use MediaWiki\Extension\AbuseFilter\Variables\VariableHolder;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Hook\BeforeInitializeHook;
 use MediaWiki\Hook\ContributionsToolLinksHook;
-use MediaWiki\Hook\InitializeArticleMaybeRedirectHook;
 use MediaWiki\Hook\SiteNoticeAfterHook;
 use MediaWiki\Hook\SkinAddFooterLinksHook;
 use MediaWiki\MediaWikiServices;
@@ -35,7 +34,6 @@ class WikiTideMagicHooks implements
 	CreateWikiTablesHook,
 	CreateWikiWritePersistentModelHook,
 	GetPreferencesHook,
-	InitializeArticleMaybeRedirectHook,
 	MessageCache__getHook,
 	SiteNoticeAfterHook,
 	SkinAddFooterLinksHook,
@@ -319,25 +317,6 @@ class WikiTideMagicHooks implements
 				$lcKey = $prefixedKey;
 			}
 		}
-	}
-
-	/**
-	 * Hard redirects all pages like Wt:Wiki:Page as global interwiki.
-	 */
-	public function onInitializeArticleMaybeRedirect( $title, $request, &$ignoreRedirect, &$target, &$article ) {
-		$title = explode( ':', $title );
-		$prefix = strtolower( $title[0] );
-
-		if ( count( $title ) < 3 || $prefix !== 'wt' ) {
-			return;
-		}
-
-		$wiki = strtolower( $title[1] );
-		$page = implode( ':', array_slice( $title, 2 ) );
-		$page = str_replace( ' ', '_', $page );
-		$page = urlencode( $page );
-
-		$target = "https://$wiki.wikitide.com/wiki/$page";
 	}
 
 	public function onTitleReadWhitelist( $title, $user, &$whitelisted ) {
