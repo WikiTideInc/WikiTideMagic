@@ -111,9 +111,6 @@
 		"GlobalUserPageWikis": {
 			"handler": "WikiTideMagicHooks"
 		},
-		"HtmlPageLinkRendererEnd": {
-			"handler": "WikiTideMagicHooks"
-		},
 		"InitializeArticleMaybeRedirect": {
 			"handler": "WikiTideMagicHooks"
 		},

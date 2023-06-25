@@ -11,7 +11,6 @@ use MediaWiki\Hook\ContributionsToolLinksHook;
 use MediaWiki\Hook\InitializeArticleMaybeRedirectHook;
 use MediaWiki\Hook\SiteNoticeAfterHook;
 use MediaWiki\Hook\SkinAddFooterLinksHook;
-use MediaWiki\Linker\Hook\HtmlPageLinkRendererEndHook;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Permissions\Hook\TitleReadWhitelistHook;
 use MediaWiki\Preferences\Hook\GetPreferencesHook;
@@ -36,7 +35,6 @@ class WikiTideMagicHooks implements
 	CreateWikiTablesHook,
 	CreateWikiWritePersistentModelHook,
 	GetPreferencesHook,
-	HtmlPageLinkRendererEndHook,
 	InitializeArticleMaybeRedirectHook,
 	MessageCache__getHook,
 	SiteNoticeAfterHook,
@@ -321,62 +319,6 @@ class WikiTideMagicHooks implements
 				$lcKey = $prefixedKey;
 			}
 		}
-	}
-
-	/**
-	 * Enables global interwiki for [[wt:wiki:Page]]
-	 */
-	public function onHtmlPageLinkRendererEnd( $linkRenderer, $target, $isKnown, &$text, &$attribs, &$ret ) {
-		$target = (string)$target;
-		$tooltip = $target;
-		$useText = true;
-
-		$ltarget = strtolower( $target );
-		$ltext = strtolower( HtmlArmor::getHtml( $text ) );
-
-		if ( $ltarget == $ltext ) {
-			// Allow link piping, but don't modify $text yet
-			$useText = false;
-		}
-
-		$target = explode( ':', $target );
-
-		if ( count( $target ) < 2 ) {
-			// Not enough parameters for interwiki
-			return;
-		}
-
-		if ( $target[0] == '0' ) {
-			array_shift( $target );
-		}
-
-		$prefix = strtolower( $target[0] );
-
-		if ( $prefix != 'wt' ) {
-			// Not interesting
-			return;
-		}
-
-		$wiki = strtolower( $target[1] );
-		$target = array_slice( $target, 2 );
-		$target = implode( ':', $target );
-
-		if ( !$useText ) {
-			$text = $target;
-		}
-		if ( $text == '' ) {
-			$text = $wiki;
-		}
-
-		$target = str_replace( ' ', '_', $target );
-		$target = urlencode( $target );
-		$linkURL = "https://$wiki.wikitide.com/wiki/$target";
-
-		$attribs = [
-			'href' => $linkURL,
-			'class' => 'extiw',
-			'title' => $tooltip
-		];
 	}
 
 	/**
