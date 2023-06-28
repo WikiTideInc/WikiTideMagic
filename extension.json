@@ -18,6 +18,16 @@
 	"requires": {
 		"MediaWiki": ">= 1.39.0"
 	},
+	"MessagesDirs": {
+		"WikiTideMagic": [
+			"i18n/overrides",
+			"i18n/wikitide",
+			"i18n/wikitideprojectnames"
+		]
+	},
+	"ExtensionMessagesFiles": {
+		"WikiTideMagicAliases": "includes/WikiTideMagicAliases.php"
+	},
 	"AutoloadClasses": {
 		"WikiTideIRCRCFeedFormatter": "includes/WikiTideIRCRCFeedFormatter.php",
 		"WikiTideMagicHooks": "includes/WikiTideMagicHooks.php",
@@ -41,9 +51,6 @@
 	"ConfigRegistry": {
 		"wikitidemagic": "GlobalVarConfig::newInstance"
 	},
-	"ExtensionMessagesFiles": {
-		"WikiTideMagicAliases": "includes/WikiTideMagicAliases.php"
-	},
         "LogActionsHandlers": {
                 "vanishuser/*": "LogFormatter"
         },
@@ -56,17 +63,6 @@
         "LogTypes": [
                 "vanishuser"
         ],
-	"MessagesDirs": {
-		"WikiTideMagic": [
-			"i18n/wikitide"
-		],
-		"WikiTideOverrideMessagesMagic": [
-			"i18n/overrides"
-		],
-		"WikiTideLocalizedProjectNames": [
-			"i18n/wikitideprojectnames"
-		]
-	},
 	"HookHandlers": {
 		"WikiTideMagicHooks": {
 			"class": "WikiTideMagicHooks",
