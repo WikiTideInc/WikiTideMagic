@@ -248,6 +248,10 @@ class WikiTideMagicHooks implements
 	public function onMessageCache__get( &$lcKey ) {
 		// phpcs:enable
 
+		if ( version_compare( MW_VERSION, '1.41', '>=' ) ) {
+			return;
+		}
+
 		static $keys = [
 			'centralauth-groupname',
 			'centralauth-login-error-locked',
@@ -316,6 +320,94 @@ class WikiTideMagicHooks implements
 			) {
 				$lcKey = $prefixedKey;
 			}
+		}
+	}
+
+	/**
+	 * From WikimediaMessages
+	 * When core requests certain messages, change the key to a WikiTide version.
+	 *
+	 * @see https://www.mediawiki.org/wiki/Manual:Hooks/MessageCacheFetchOverrides
+	 * @param string[] &$keys
+	 */
+	public function onMessageCacheFetchOverrides( array &$keys ): void {
+		static $keysToOverride = [
+			'centralauth-groupname',
+			'centralauth-login-error-locked',
+			'dberr-again',
+			'dberr-problems',
+			'globalblocking-ipblocked-range',
+			'globalblocking-ipblocked-xff',
+			'globalblocking-ipblocked',
+			'grouppage-autoconfirmed',
+			'grouppage-automoderated',
+			'grouppage-autoreview',
+			'grouppage-blockedfromchat',
+			'grouppage-bot',
+			'grouppage-bureaucrat',
+			'grouppage-chatmod',
+			'grouppage-checkuser',
+			'grouppage-commentadmin',
+			'grouppage-csmoderator',
+			'grouppage-editor',
+			'grouppage-flow-bot',
+			'grouppage-interface-admin',
+			'grouppage-moderator',
+			'grouppage-no-ipinfo',
+			'grouppage-reviewer',
+			'grouppage-suppress',
+			'grouppage-sysop',
+			'grouppage-upwizcampeditors',
+			'grouppage-user',
+			'importdump-help-reason',
+			'importdump-help-target',
+			'importdump-help-upload-file',
+			'importtext',
+			'newsignuppage-loginform-tos',
+			'newsignuppage-must-accept-tos',
+			'oathauth-step1',
+			'prefs-help-realname',
+			'privacypage',
+			'restriction-delete',
+			'restriction-protect',
+			'skinname-snapwikiskin',
+			'snapwikiskin',
+			'uploadtext',
+			'webauthn-module-description',
+			'wikibase-sitelinks-wikitide',
+		];
+
+		$languageCode = $this->options->get( 'LanguageCode' );
+
+		$transformationCallback = static function ( string $key, MessageCache $cache ) use ( $languageCode ): string {
+			$transformedKey = "wikitide-$key";
+
+			// MessageCache uses ucfirst if ord( key ) is < 128, which is true of all
+			// of the above.  Revisit if non-ASCII keys are used.
+			$ucKey = ucfirst( $key );
+
+			if (
+				/*
+				 * Override order:
+				 * 1. If the MediaWiki:$ucKey page exists, use the key unprefixed
+				 * (in all languages) with normal fallback order.  Specific
+				 * language pages (MediaWiki:$ucKey/xy) are not checked when
+				 * deciding which key to use, but are still used if applicable
+				 * after the key is decided.
+				 *
+				 * 2. Otherwise, use the prefixed key with normal fallback order
+				 * (including MediaWiki pages if they exist).
+				 */
+				$cache->getMsgFromNamespace( $ucKey, $languageCode ) === false
+			) {
+				return $transformedKey;
+			}
+
+			return $key;
+		};
+
+		foreach ( $keysToOverride as $key ) {
+			$keys[$key] = $transformationCallback;
 		}
 	}
 

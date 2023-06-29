@@ -110,6 +110,9 @@
 		"MessageCache::get": {
 			"handler": "WikiTideMagicHooks"
 		},
+		"MessageCacheFetchOverrides": {
+			"handler": "WikiTideMagicHooks"
+		},
 		"SiteNoticeAfter": {
 			"handler": "WikiTideMagicHooks"
 		},
