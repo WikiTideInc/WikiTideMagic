@@ -3,6 +3,8 @@
 use MediaWiki\MediaWikiServices;
 use Wikimedia\Rdbms\DBQueryError;
 
+$wgAWSBucketName = 'test';
+
 $wgHooks['MediaWikiServices'][] = 'wfOnMediaWikiServices';
 
 function wfOnMediaWikiServices( MediaWikiServices $services ) {
