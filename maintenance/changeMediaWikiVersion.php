@@ -78,7 +78,7 @@ class ChangeMediaWikiVersion extends Maintenance {
 		}
 	}
 
-	private static function getWikiDbNamesByRegex( string $pattern ): array {
+	private function getWikiDbNamesByRegex( string $pattern ): array {
 		$allDbNames = $this->getConfig()->get( 'LocalDatabases' );
 
 		$matchingDbNames = [];
