@@ -32,7 +32,7 @@ class ChangeMediaWikiVersion extends Maintenance {
 
 		$this->addDescription( 'Change the MediaWiki version for a specific wiki or a list of wikis from a text file.' );
 
-		$this->addOption( 'version', 'Sets the wikis requested to a different MediaWiki version.', true, true );
+		$this->addOption( 'mwversion', 'Sets the wikis requested to a different MediaWiki version.', true, true );
 		$this->addOption( 'file', 'Path to file where the wikinames are stored. Must be one wikidb name per line. (Optional, falls back to current dbname)', false, true );
 		$this->addOption( 'regex', 'Uses a regular expression to select wikis starting with a specific pattern. Overrides the --file option.' );
 		$this->addOption( 'dry-run', 'Performs a dry run without making any changes to the wikis.' );
@@ -55,7 +55,7 @@ class ChangeMediaWikiVersion extends Maintenance {
 
 		foreach ( $dbnames as $dbname ) {
 			$oldVersion = WikiForgeFunctions::getMediaWikiVersion( $dbname );
-			$newVersion = $this->getOption( 'version' );
+			$newVersion = $this->getOption( 'mwversion' );
 
 			if ( $newVersion !== $oldVersion && is_dir( '/srv/mediawiki/' . $newVersion ) ) {
 				if ( $this->hasOption( 'dry-run' ) ) {
