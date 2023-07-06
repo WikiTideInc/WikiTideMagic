@@ -89,19 +89,16 @@ class ChangeMediaWikiVersion extends Maintenance {
 	}
 
 	private function getWikiDbNamesByRegex( string $pattern ): array {
+		$delimiter = '/';
+		if ( !( substr( $pattern, 0, 1 ) === $delimiter && substr( $pattern, -1 ) === $delimiter ) ) {
+			$pattern = $delimiter . $pattern . $delimiter;
+		}
+
 		$allDbNames = $this->getConfig()->get( 'LocalDatabases' );
 
 		$matchingDbNames = [];
 		foreach ( $allDbNames as $dbName ) {
-			$delimiter = '/';
-
-			if ( substr( $pattern, 0, 1 ) === $delimiter && substr( $pattern, -1 ) === $delimiter ) {
-				$escapedPattern = escapeshellcmd( $pattern );
-			} else {
-				$escapedPattern = $delimiter . escapeshellcmd( $pattern ) . $delimiter;
-			}
-
-			if ( preg_match( $escapedPattern, $dbName ) ) {
+			if ( preg_match( $pattern, $dbName ) ) {
 				$matchingDbNames[] = $dbName;
 			}
 		}
