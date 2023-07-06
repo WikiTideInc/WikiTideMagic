@@ -35,13 +35,17 @@ class ChangeMediaWikiVersion extends Maintenance {
 		$this->addOption( 'mwversion', 'Sets the wikis requested to a different MediaWiki version.', true, true );
 		$this->addOption( 'file', 'Path to file where the wikinames are stored. Must be one wikidb name per line. (Optional, falls back to current dbname)', false, true );
 		$this->addOption( 'regex', 'Uses a regular expression to select wikis starting with a specific pattern. Overrides the --file option.' );
+		$this->addOption( 'all-wikis', 'Upgrade all remaining non-upgraded wikis from $wgLocalDatabases. Overrides the --file and --regex options.' );
+		$this->addOption( 'skip-wikis', 'Skips these particular wikis if defined in --file, --regex, or --all-wikis. Value can be a single wiki or a comma-separated list of wikis.' );
 		$this->addOption( 'dry-run', 'Performs a dry run without making any changes to the wikis.' );
 	}
 
 	public function execute() {
 		$dbnames = [];
 
-		if ( (bool)$this->getOption( 'regex' ) ) {
+		if ( $this->hasOption( 'all-wikis' ) ) {
+			$dbnames = $this->getConfig()->get( 'LocalDatabases' );
+		} elseif ( (bool)$this->getOption( 'regex' ) ) {
 			$pattern = $this->getOption( 'regex' );
 			$dbnames = $this->getWikiDbNamesByRegex( $pattern );
 		} elseif ( (bool)$this->getOption( 'file' ) ) {
@@ -51,6 +55,12 @@ class ChangeMediaWikiVersion extends Maintenance {
 			}
 		} else {
 			$dbnames[] = $this->getConfig()->get( 'DBname' );
+		}
+
+		$skipWikis = $this->getOption( 'skip-wikis' );
+		if ( $skipWikis ) {
+			$skipList = explode( ',', $skipWikis );
+			$dbnames = array_diff( $dbnames, $skipList );
 		}
 
 		foreach ( $dbnames as $dbname ) {
@@ -83,7 +93,15 @@ class ChangeMediaWikiVersion extends Maintenance {
 
 		$matchingDbNames = [];
 		foreach ( $allDbNames as $dbName ) {
-			if ( preg_match( $pattern, $dbName ) ) {
+			$delimiter = '/';
+
+			if ( substr( $pattern, 0, 1 ) === $delimiter && substr( $pattern, -1 ) === $delimiter ) {
+				$escapedPattern = escapeshellcmd( $pattern );
+			} else {
+				$escapedPattern = $delimiter . escapeshellcmd( $pattern ) . $delimiter;
+			}
+
+			if ( preg_match( $escapedPattern, $dbName ) ) {
 				$matchingDbNames[] = $dbName;
 			}
 		}
