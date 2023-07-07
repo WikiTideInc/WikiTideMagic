@@ -24,7 +24,7 @@
 
 require_once __DIR__ . '/../../../maintenance/Maintenance.php';
 
-use Miraheze\CreateWiki\RemoteWiki;
+use WikiForge\CreateWiki\RemoteWiki;
 
 class ChangeMediaWikiVersion extends Maintenance {
 	public function __construct() {
