@@ -14,7 +14,7 @@
 		]
 	},
 	"wikitide-centralauth-login-error-locked": "{{GENDER:$1|Вы}} не можете авторизоваться, потому что {{GENDER:$1|ваша}} учётная запись [[wt:meta:Special:MyLanguage/Global locks|глобально отключена]]. Пожалуйста, напишите на <code>cvt[собака]wikiforge.net</code>, чтобы узнать подробности или оспорить отключение.",
-	"wikitide-dberr-again": "Повторите, пожалуйста, попытку через несколько минут, обычно к тому времени эти ошибки устраняются. Если вы постоянно получаете эту ошибку, пожалуйста, проверьте наш Twitter (https://twitter.com/WikiTide) для получения дополнительной информации или свяжитесь с администраторами системы WikiTide, присоединившись к #wikitide-sre на irc.libera.chat.",
+	"wikitide-dberr-again": "Повторите, пожалуйста, попытку через несколько минут, обычно к тому времени эти ошибки устраняются. Если вы постоянно получаете эту ошибку, пожалуйста, проверьте наш Twitter (https://twitter.com/WikiTide) для получения дополнительной информации или свяжитесь с администраторами системы WikiTide, присоединившись к #wikiforge-sre на irc.libera.chat.",
 	"wikitide-dberr-problems": "Эта вики временно недоступна",
 	"wikitide-newsignuppage-loginform-tos": "Мною были прочитаны, поняты и я соглашаюсь с [https://meta.wikitide.com/wiki/Special:MyLanguage/Terms_of_Use Условиями использования] и [https://meta.wikitide.com/wiki/Special:MyLanguage/Privacy_Policy Политикой приватности]",
 	"wikitide-newsignuppage-must-accept-tos": "Вы должны принять Условия использования, чтобы создать учётную запись!",

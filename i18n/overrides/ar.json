@@ -8,7 +8,7 @@
 		]
 	},
 	"wikitide-centralauth-groupname": "ميراهيز",
-	"wikitide-dberr-again": "حاول الانتظار بضع دقائق وإعادة التحميل، لمزيد من المعلومات حول هذا الخطأ; تُرجَى مراجعة صفحة تويتر الخاصة بنا (Twitter.com/WikiTide) أو الاتصال بإداريي النظام عن طريق الاتصال بـ#wikitide على irc.libera.chat",
+	"wikitide-dberr-again": "حاول الانتظار بضع دقائق وإعادة التحميل، لمزيد من المعلومات حول هذا الخطأ; تُرجَى مراجعة صفحة تويتر الخاصة بنا (Twitter.com/WikiTide) أو الاتصال بإداريي النظام عن طريق الاتصال بـ#wikiforge على irc.libera.chat",
 	"wikitide-importtext": "يرجى تصدير الملف من ويكي المصدر باستخدام [[Special:Export|أداة التصدير]].! N! احفظه على جهاز الكمبيوتر الخاص بك وقم بتحميله هنا.<br /> يرجى ملاحظة أنه إذا كان الملف كبيرًا قليلاً (~> 2 ميجابايت) ، فستحتاج إلى [[wt:meta:Special:RequestImportDump|طلب استيراد]] حيث لا يمكن القيام بذلك هنا بسبب القيود الفنية.",
 	"wikitide-newsignuppage-loginform-tos": "لقد قرأت وفهمت ووافقت على [https://meta.wikitide.com/wiki/Terms_of_Use شروط الاستخدام] و[https://meta.wikitide.com/wiki/Privacy_Policy سياسة الخصوصية]",
 	"wikitide-newsignuppage-must-accept-tos": "يجب عليك قبول شروط الاستخدام حتى تتمكن من إنشاء حساب!",

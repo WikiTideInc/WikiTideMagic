@@ -14,7 +14,7 @@
 	},
 	"wikitide-centralauth-groupname": "WikiTide",
 	"wikitide-centralauth-login-error-locked": "{{GENDER:$1|あなた}}はログインすることができません {{GENDER:$1|あなた}}のアカウントはブロックされました。詳細か訴えるためには <code>cvt[at]wikiforge.net</code> にお問い合わせください。",
-	"wikitide-dberr-again": "数分待ってから再読み込みしてみてください。このエラーに関する詳しい情報は、Twitter (https://twitter.com/WikiTide) をご覧になるか、irc.libera.chat の #wikitide-sre に接続してシステム管理者にお問い合わせください。",
+	"wikitide-dberr-again": "数分待ってから再読み込みしてみてください。このエラーに関する詳しい情報は、Twitter (https://twitter.com/WikiTide) をご覧になるか、irc.libera.chat の #wikiforge-sre に接続してシステム管理者にお問い合わせください。",
 	"wikitide-dberr-problems": "このウィキは一時的に利用できません",
 	"wikitide-importtext": "[[Special:Export|エクスポート機能]]を使用して、元のウィキからファイルをエクスポートします。まずご使用のコンピューターに保存してから、ここにアップロードしてください。<br />ファイルが大きい場合 (5MB 超) はブラウザー経由では不可能なので、[[wt:meta:Moving_a_wiki_to_WikiTide#Request_import|インポートの申請]]が必要である点に注意してください。",
 	"wikitide-newsignuppage-loginform-tos": "[https://meta.wikitide.com/wiki/Terms_of_Use 利用規約]と[https://meta.wikitide.com/wiki/Privacy_Policy プライバシーポリシー]を読んで、同意した。",
