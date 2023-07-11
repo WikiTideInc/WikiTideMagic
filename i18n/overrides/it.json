@@ -6,7 +6,7 @@
 		]
 	},
 	"wikitide-centralauth-login-error-locked": "Non {{GENDER:$1|puoi}} accedere perché la tua utenza è stata [[wt:meta:Special:MyLanguage/Global locks|bloccata globalmente]]. Contatta <code>cvt[at]wikiforge.net</code> per ulteriori informazioni o per appellarti.",
-	"wikitide-dberr-again": "Riprova tra qualche minuto, questi errori di solito si risolvono velocemente. Se ricevi questo errore in modo persistente, controlla il nostro Twitter (https://twitter.com/WikiTideStatus) per ulteriori informazioni o informaci unendoti a #wikiforge-sre su irc.libera.chat o al nostro server Discord (https://discord.gg/ND5Arhght2).",
+	"wikitide-dberr-again": "Riprova tra qualche minuto, questi errori di solito si risolvono velocemente. Se ricevi questo errore in modo persistente, controlla il nostro Twitter (https://twitter.com/WikiTide) per ulteriori informazioni o informaci unendoti a #wikiforge-sre su irc.libera.chat o al nostro server Discord (https://discord.gg/ND5Arhght2).",
 	"wikitide-newsignuppage-loginform-tos": "Io ho letto, capito e accettato le\n[https://meta.wikitide.com/wiki/Special:MyLanguage/Terms_of_Use Condizioni d'uso] e la [https://meta.wikitide.com/wiki/Special:MyLanguage/Privacy_Policy Politica sulla Privacy]",
 	"wikitide-newsignuppage-must-accept-tos": "Tu devi accettare i termini d’uso per essere capace di creare un account!",
 	"wikitide-oathauth-step1": "IMPORTANTE! Leggi la pagina OATHAuth prima di attivare! Passo 1: Scarica un programma di autentificazione a due fattori",
