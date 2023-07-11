@@ -5,12 +5,12 @@
 			"WikiPhoenix"
 		]
 	},
-	"wikitide-centralauth-login-error-locked": "{{GENDER:$1|Du}} kunde inte logga in för att {{GENDER:$1|ditt}} konto har låsts globalt. Kontakta <code>cvt[på]wikitide.org</code> för mer information eller för att överklaga.",
+	"wikitide-centralauth-login-error-locked": "{{GENDER:$1|Du}} kunde inte logga in för att {{GENDER:$1|ditt}} konto har låsts globalt. Kontakta <code>cvt[på]wikiforge.net</code> för mer information eller för att överklaga.",
 	"wikitide-dberr-again": "Försök att vänta några minuter och ladda in sidan på nytt. Kolla vårt Twitter-konto (https://twitter.com/WikiTide) eller kontakta systemadministratörerna genom att ansluta till #wikitide på irc.libera.chat för att ta reda på mer om felet.",
-	"wikitide-newsignuppage-loginform-tos": "Jag har läst, förstått och samtycker i [https://meta.wikitide.org/wiki/Terms_of_Use användarvillkoren] och [https://meta.wikitide.org/wiki/Privacy_Policy integritetspolicyn]",
+	"wikitide-newsignuppage-loginform-tos": "Jag har läst, förstått och samtycker i [https://meta.wikitide.com/wiki/Terms_of_Use användarvillkoren] och [https://meta.wikitide.com/wiki/Privacy_Policy integritetspolicyn]",
 	"wikitide-newsignuppage-must-accept-tos": "Du måste acceptera användarvillkoren för att skapa ett konto!",
 	"wikitide-oathauth-step1": "VIKTIGT! Se till att läsa OATHAuth-sidan innan du slår på detta! Steg 1: Ladda ner ett program för tvåfaktorsautensiering",
-	"wikitide-prefs-help-realname": "Riktigt namn är valfritt. Väljer du att ange det, kommer det att användas för att tillskriva dig ditt arbete. Genom att använda WikiTide accepterar du dessutom till <span class=\"plainlinks\">[https://meta.wikitide.org/wiki/Terms_of_Use användarvillkoren]</span> och <span class=\"plainlinks\">[https://meta.wikitide.org/wiki/Privacy_Policy integritetspolicyn]</span>.",
+	"wikitide-prefs-help-realname": "Riktigt namn är valfritt. Väljer du att ange det, kommer det att användas för att tillskriva dig ditt arbete. Genom att använda WikiTide accepterar du dessutom till <span class=\"plainlinks\">[https://meta.wikitide.com/wiki/Terms_of_Use användarvillkoren]</span> och <span class=\"plainlinks\">[https://meta.wikitide.com/wiki/Privacy_Policy integritetspolicyn]</span>.",
 	"wikitide-restriction-delete": "Radera",
 	"wikitide-restriction-protect": "Skrivskydda",
 	"wikitide-skinname-snapwikiskin": "Snäpp!",

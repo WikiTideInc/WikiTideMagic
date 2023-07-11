@@ -7,9 +7,9 @@
 		]
 	},
 	"wikitide-centralauth-groupname": "মিরাহীজ",
-	"wikitide-newsignuppage-loginform-tos": "আমি [https://meta.wikitide.org/wiki/Special:MyLanguage/Terms_of_Use ব্যবহারের শর্তাবলী] ও [https://meta.wikitide.org/wiki/Special:MyLanguage/Privacy_Policy গোপনীয়তার নীতি] পড়েছি, তা বুঝেছি এবং তা গ্রহণ করতে সম্মত হচ্ছি।",
+	"wikitide-newsignuppage-loginform-tos": "আমি [https://meta.wikitide.com/wiki/Special:MyLanguage/Terms_of_Use ব্যবহারের শর্তাবলী] ও [https://meta.wikitide.com/wiki/Special:MyLanguage/Privacy_Policy গোপনীয়তার নীতি] পড়েছি, তা বুঝেছি এবং তা গ্রহণ করতে সম্মত হচ্ছি।",
 	"wikitide-newsignuppage-must-accept-tos": "অ্যাকাউন্ট তৈরি করতে সক্ষম হওয়ার জন্য আপনাকে অবশ্যই ব্যবহারের শর্তাবলী গ্রহণ করতে হবে!",
-	"wikitide-prefs-help-realname": "আসল নাম ঐচ্ছিক। আপনি যদি এটি প্রদান করেন, তবে আপনার কাজে আপনাকে কৃতিত্ব দিতে এটি ব্যবহার করা হবে। এছাড়া, মিরাহেজ দ্বারা হোস্টকৃত উইকি ব্যবহার করার দ্বারা, আপনি <span class=\"plainlinks\">[https://meta.wikitide.org/wiki/Terms_of_Use ব্যবহারের শর্তাবলীর]</span> সাথে সম্মত হচ্ছেন ও <span class=\"plainlinks\">[https://meta.wikitide.org/wiki/Privacy_Policy গোপনীয়তার নীতি]</span> গ্রহণ করে নিচ্ছেন।",
+	"wikitide-prefs-help-realname": "আসল নাম ঐচ্ছিক। আপনি যদি এটি প্রদান করেন, তবে আপনার কাজে আপনাকে কৃতিত্ব দিতে এটি ব্যবহার করা হবে। এছাড়া, মিরাহেজ দ্বারা হোস্টকৃত উইকি ব্যবহার করার দ্বারা, আপনি <span class=\"plainlinks\">[https://meta.wikitide.com/wiki/Terms_of_Use ব্যবহারের শর্তাবলীর]</span> সাথে সম্মত হচ্ছেন ও <span class=\"plainlinks\">[https://meta.wikitide.com/wiki/Privacy_Policy গোপনীয়তার নীতি]</span> গ্রহণ করে নিচ্ছেন।",
 	"wikitide-restriction-delete": "অপসারণ",
 	"wikitide-restriction-protect": "সুরক্ষা"
 }

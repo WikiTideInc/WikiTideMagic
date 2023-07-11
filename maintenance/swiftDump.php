@@ -33,7 +33,7 @@ class SwiftDump extends Maintenance {
 		Shell::command(
 			'swift', 'download',
 			"wikitide-$wiki-local-public",
-			'-A', 'https://swift-lb.wikitide.org/auth/v1.0',
+			'-A', 'https://swift-lb.wikitide.com/auth/v1.0',
 			'-U', 'mw:media',
 			'-K', $wmgSwiftPassword,
 			'-D', "/tmp/$wiki",

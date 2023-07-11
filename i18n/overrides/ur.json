@@ -5,8 +5,8 @@
 		]
 	},
 	"wikitide-centralauth-groupname": "میراہیزی",
-	"wikitide-centralauth-login-error-locked": "{{GENDER:$1|آپ}} داخل نہیں ہوسکتے کیونکہ{{GENDER:$1|آپ}} کا کھاتہ عالمی سطح پر مقفل ہے۔ براہ کرم مزید معلومات یا اپیل کرنے کے لیے <code>cvt[at]wikitide.org</code> سے رابطہ کریں۔",
-	"wikitide-newsignuppage-loginform-tos": "میں نے [https://meta.wikitide.org/wiki/Terms_of_Use استعمال کی شرائط] اور [https://meta.wikitide.org/wiki/Privacy_Policy رازداری پالیسی] کو پڑھا، سمجھا اور ان سے اتفاق کیا ہے۔",
+	"wikitide-centralauth-login-error-locked": "{{GENDER:$1|آپ}} داخل نہیں ہوسکتے کیونکہ{{GENDER:$1|آپ}} کا کھاتہ عالمی سطح پر مقفل ہے۔ براہ کرم مزید معلومات یا اپیل کرنے کے لیے <code>cvt[at]wikiforge.net</code> سے رابطہ کریں۔",
+	"wikitide-newsignuppage-loginform-tos": "میں نے [https://meta.wikitide.com/wiki/Terms_of_Use استعمال کی شرائط] اور [https://meta.wikitide.com/wiki/Privacy_Policy رازداری پالیسی] کو پڑھا، سمجھا اور ان سے اتفاق کیا ہے۔",
 	"wikitide-newsignuppage-must-accept-tos": "ایک کھاتہ بنانے کے قابل ہونے کے لیے آپ کو استعمال کی شرائط کو قبول کرنا ہوگا!",
 	"wikitide-restriction-delete": "حذف",
 	"wikitide-restriction-protect": "محفوظ",
