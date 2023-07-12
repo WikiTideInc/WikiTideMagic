@@ -293,7 +293,6 @@ class WikiTideMagicHooks implements
 			'restriction-protect',
 			'skinname-snapwikiskin',
 			'snapwikiskin',
-			'uploadtext',
 			'webauthn-module-description',
 			'wikibase-sitelinks-wikitide',
 		];
@@ -372,7 +371,6 @@ class WikiTideMagicHooks implements
 			'restriction-protect',
 			'skinname-snapwikiskin',
 			'snapwikiskin',
-			'uploadtext',
 			'webauthn-module-description',
 			'wikibase-sitelinks-wikitide',
 		];
