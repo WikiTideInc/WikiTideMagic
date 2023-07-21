@@ -8,6 +8,7 @@ use MediaWiki\Extension\AbuseFilter\Variables\VariableHolder;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Hook\BeforeInitializeHook;
 use MediaWiki\Hook\ContributionsToolLinksHook;
+use MediaWiki\Hook\GetLocalURL__InternalHook;
 use MediaWiki\Hook\SiteNoticeAfterHook;
 use MediaWiki\Hook\SkinAddFooterLinksHook;
 use MediaWiki\MediaWikiServices;
@@ -33,6 +34,7 @@ class WikiTideMagicHooks implements
 	CreateWikiStatePrivateHook,
 	CreateWikiTablesHook,
 	CreateWikiWritePersistentModelHook,
+	GetLocalURL__InternalHook,
 	GetPreferencesHook,
 	MessageCache__getHook,
 	SiteNoticeAfterHook,
@@ -71,6 +73,7 @@ class WikiTideMagicHooks implements
 		return new self(
 			new ServiceOptions(
 				[
+					'ArticlePath',
 					'AWSBucketName',
 					'CreateWikiCacheDirectory',
 					'CreateWikiGlobalWiki',
@@ -80,6 +83,7 @@ class WikiTideMagicHooks implements
 					'LocalDatabases',
 					'ManageWikiSettings',
 					'ObjectCaches',
+					'Script',
 				],
 				$mainConfig
 			),
@@ -511,6 +515,30 @@ class WikiTideMagicHooks implements
 				'https://meta.wikitide.com/wiki/Special:CentralAuth/' . $username,
 				strtolower( $specialPage->msg( 'centralauth' )->text() )
 			);
+		}
+	}
+
+	/**
+	 * phpcs:disable MediaWiki.NamingConventions.LowerCamelFunctionsName.FunctionName
+	 *
+	 * @param Title $title
+	 * @param string &$url
+	 * @param string $query
+	 */
+	public function onGetLocalURL__Internal( $title, &$url, $query ) {
+		// phpcs:enable
+
+		if ( defined( 'MW_PHPUNIT_TEST' ) ) {
+			return;
+		}
+
+		// If the URL contains wgScript, rewrite it to use wgArticlePath
+		if ( str_contains( $url, $this->options->get( 'Script' ) ) ) {
+			$dbkey = wfUrlencode( $title->getPrefixedDBkey() );
+			$url = str_replace( '$1', $dbkey, $this->options->get( 'ArticlePath' ) );
+			if ( $query !== '' ) {
+				$url = wfAppendQuery( $url, $query );
+			}
 		}
 	}
 

@@ -101,6 +101,9 @@
 		"CreateWikiWritePersistentModel": {
 			"handler": "WikiTideMagicHooks"
 		},
+		"GetLocalURL::Internal": {
+			"handler": "WikiTideMagicHooks"
+		},
 		"GetPreferences": {
 			"handler": "WikiTideMagicHooks"
 		},
