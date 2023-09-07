@@ -469,18 +469,18 @@ class WikiTideMagicHooks implements
 
 		if ( $cwConfig->get( 'Closed' ) ) {
 			if ( $cwConfig->get( 'Private' ) ) {
-				$siteNotice .= '<div class="wikitable" style="text-align: center; width: 90%; margin-left: auto; margin-right:auto; padding: 15px; border: 4px solid black; background-color: #EEE;"> <span class="plainlinks"> <img src="https://static.wikitide.com/metawiki/0/02/Wiki_lock.png" align="left" style="width:80px;height:90px;">' . $skin->msg( 'wikitide-sitenotice-closed-private' )->parse() . '</span></div>';
+				$siteNotice .= '<div class="wikitable" style="text-align: center; width: 90%; margin-left: auto; margin-right:auto; padding: 15px; border: 4px solid black; background-color: #EEE;"> <span class="plainlinks"> <img src="https://static.wikitide.org/metawiki/0/02/Wiki_lock.png" align="left" style="width:80px;height:90px;">' . $skin->msg( 'wikitide-sitenotice-closed-private' )->parse() . '</span></div>';
 			} else {
-				$siteNotice .= '<div class="wikitable" style="text-align: center; width: 90%; margin-left: auto; margin-right:auto; padding: 15px; border: 4px solid black; background-color: #EEE;"> <span class="plainlinks"> <img src="https://static.wikitide.com/metawiki/0/02/Wiki_lock.png" align="left" style="width:80px;height:90px;">' . $skin->msg( 'wikitide-sitenotice-closed' )->parse() . '</span></div>';
+				$siteNotice .= '<div class="wikitable" style="text-align: center; width: 90%; margin-left: auto; margin-right:auto; padding: 15px; border: 4px solid black; background-color: #EEE;"> <span class="plainlinks"> <img src="https://static.wikitide.org/metawiki/0/02/Wiki_lock.png" align="left" style="width:80px;height:90px;">' . $skin->msg( 'wikitide-sitenotice-closed' )->parse() . '</span></div>';
 			}
 		} elseif ( $cwConfig->get( 'Inactive' ) && $cwConfig->get( 'Inactive' ) !== 'exempt' ) {
 			if ( $cwConfig->get( 'Private' ) ) {
-				$siteNotice .= '<div class="wikitable" style="text-align: center; width: 90%; margin-left: auto; margin-right:auto; padding: 15px; border: 4px solid black; background-color: #EEE;"> <span class="plainlinks"> <img src="https://static.wikitide.com/metawiki/5/5f/Out_of_date_clock_icon.png" align="left" style="width:80px;height:90px;">' . $skin->msg( 'wikitide-sitenotice-inactive-private' )->parse() . '</span></div>';
+				$siteNotice .= '<div class="wikitable" style="text-align: center; width: 90%; margin-left: auto; margin-right:auto; padding: 15px; border: 4px solid black; background-color: #EEE;"> <span class="plainlinks"> <img src="https://static.wikitide.org/metawiki/5/5f/Out_of_date_clock_icon.png" align="left" style="width:80px;height:90px;">' . $skin->msg( 'wikitide-sitenotice-inactive-private' )->parse() . '</span></div>';
 			} else {
-				$siteNotice .= '<div class="wikitable" style="text-align: center; width: 90%; margin-left: auto; margin-right:auto; padding: 15px; border: 4px solid black; background-color: #EEE;"> <span class="plainlinks"> <img src="https://static.wikitide.com/metawiki/5/5f/Out_of_date_clock_icon.png" align="left" style="width:80px;height:90px;">' . $skin->msg( 'wikitide-sitenotice-inactive' )->parse() . '</span></div>';
+				$siteNotice .= '<div class="wikitable" style="text-align: center; width: 90%; margin-left: auto; margin-right:auto; padding: 15px; border: 4px solid black; background-color: #EEE;"> <span class="plainlinks"> <img src="https://static.wikitide.org/metawiki/5/5f/Out_of_date_clock_icon.png" align="left" style="width:80px;height:90px;">' . $skin->msg( 'wikitide-sitenotice-inactive' )->parse() . '</span></div>';
 			}
 		} elseif ( $cwConfig->get( 'Closed' ) && $cwConfig->get( 'Locked' ) ) {
-			$siteNotice .= '<div class="wikitable" style="text-align: center; width: 90%; margin-left: auto; margin-right:auto; padding: 15px; border: 4px solid black; background-color: #EEE;"> <span class="plainlinks"> <img src="https://static.wikitide.com/metawiki/5/5f/Out_of_date_clock_icon.png" align="left" style="width:80px;height:90px;">' . $skin->msg( 'wikitide-sitenotice-closed-locked' )->parse() . '</span></div>';
+			$siteNotice .= '<div class="wikitable" style="text-align: center; width: 90%; margin-left: auto; margin-right:auto; padding: 15px; border: 4px solid black; background-color: #EEE;"> <span class="plainlinks"> <img src="https://static.wikitide.org/metawiki/5/5f/Out_of_date_clock_icon.png" align="left" style="width:80px;height:90px;">' . $skin->msg( 'wikitide-sitenotice-closed-locked' )->parse() . '</span></div>';
 		}
 	}
 
@@ -512,7 +512,7 @@ class WikiTideMagicHooks implements
 
 		if ( !IPUtils::isIPAddress( $username ) ) {
 			$tools['centralauth'] = Linker::makeExternalLink(
-				'https://meta.wikitide.com/wiki/Special:CentralAuth/' . $username,
+				'https://meta.wikitide.org/wiki/Special:CentralAuth/' . $username,
 				strtolower( $specialPage->msg( 'centralauth' )->text() )
 			);
 		}

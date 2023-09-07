@@ -24,7 +24,7 @@ args = parser.parse_args()
 
 reqsession = requests.Session()
 print('getting wikilist')
-URL = 'https://meta.wikitide.com/w/api.php'
+URL = 'https://meta.wikitide.org/w/api.php'
 PARAMS = {
     'action': 'wikidiscover',
     'format': 'json',

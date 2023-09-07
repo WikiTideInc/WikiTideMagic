@@ -8,10 +8,10 @@
 	},
 	"wikitide-centralauth-login-error-locked": "{{GENDER:$1|}}Nie możesz się zalogować, ponieważ {{GENDER:$1|}}twoje konto jest globalnie zablokowane. Skontaktuj się z nami na adres <code>cvt[na]wikiforge.net</code>, aby uzyskać więcej informacji lub przedyskutować blokadę.",
 	"wikitide-dberr-again": "Spróbuj poczekać kilka minut, a następnie odśwież stronę. Aby uzyskać więcej informacji o tym błędzie, sprawdź naszą stronę na Twitterze (https://twitter.com/WikiTide) lub skontaktuj się z administratorami systemu na kanale #wikiforge-sr w sieci irc.libera.chat.",
-	"wikitide-newsignuppage-loginform-tos": "Przeczytałem, zrozumiałem oraz akceptuję [https://meta.wikitide.com/wiki/Terms_of_Use Zasady użytkowania] i [https://meta.wikitide.com/wiki/Privacy_Policy Politykę prywatności]",
+	"wikitide-newsignuppage-loginform-tos": "Przeczytałem, zrozumiałem oraz akceptuję [https://meta.wikitide.org/wiki/Terms_of_Use Zasady użytkowania] i [https://meta.wikitide.org/wiki/Privacy_Policy Politykę prywatności]",
 	"wikitide-newsignuppage-must-accept-tos": "Musisz zaakceptować Zasady użytkowania aby móc założyć konto!",
 	"wikitide-oathauth-step1": "UWAGA! Upewnij się że {{GENDER:|przeczytałeś|przeczytałaś}} stronę OATHAuth przed włączeniem tej funkcji! Krok 1: Pobierz program do uwierzytelniania dwuskładnikowego",
-	"wikitide-prefs-help-realname": "Imię i nazwisko jest opcjonalne. Jeśli zdecydujesz się je podać, zostaną użyte, by udokumentować twoje autorstwo. Ponadto korzystając z wiki hostowanej przez WikiTide akceptujesz <span class=\"plainlinks\">[https://meta.wikitide.com/wiki/Terms_of_Use Zasady użytkowania]</span> oraz <span class=\"plainlinks\">[https://meta.wikitide.com/wiki/Privacy_Policy Politykę prywatności]</span>",
+	"wikitide-prefs-help-realname": "Imię i nazwisko jest opcjonalne. Jeśli zdecydujesz się je podać, zostaną użyte, by udokumentować twoje autorstwo. Ponadto korzystając z wiki hostowanej przez WikiTide akceptujesz <span class=\"plainlinks\">[https://meta.wikitide.org/wiki/Terms_of_Use Zasady użytkowania]</span> oraz <span class=\"plainlinks\">[https://meta.wikitide.org/wiki/Privacy_Policy Politykę prywatności]</span>",
 	"wikitide-restriction-delete": "Usuń",
 	"wikitide-restriction-protect": "Zabezpiecz",
 	"wikitide-wikibase-sitelinks-wikitide": "Wiki WikiTide"

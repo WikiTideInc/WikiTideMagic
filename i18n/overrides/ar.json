@@ -10,10 +10,10 @@
 	"wikitide-centralauth-groupname": "ميراهيز",
 	"wikitide-dberr-again": "حاول الانتظار بضع دقائق وإعادة التحميل، لمزيد من المعلومات حول هذا الخطأ; تُرجَى مراجعة صفحة تويتر الخاصة بنا (Twitter.com/WikiTide) أو الاتصال بإداريي النظام عن طريق الاتصال بـ#wikiforge على irc.libera.chat",
 	"wikitide-importtext": "يرجى تصدير الملف من ويكي المصدر باستخدام [[Special:Export|أداة التصدير]].! N! احفظه على جهاز الكمبيوتر الخاص بك وقم بتحميله هنا.<br /> يرجى ملاحظة أنه إذا كان الملف كبيرًا قليلاً (~> 2 ميجابايت) ، فستحتاج إلى [[wt:meta:Special:RequestImportDump|طلب استيراد]] حيث لا يمكن القيام بذلك هنا بسبب القيود الفنية.",
-	"wikitide-newsignuppage-loginform-tos": "لقد قرأت وفهمت ووافقت على [https://meta.wikitide.com/wiki/Terms_of_Use شروط الاستخدام] و[https://meta.wikitide.com/wiki/Privacy_Policy سياسة الخصوصية]",
+	"wikitide-newsignuppage-loginform-tos": "لقد قرأت وفهمت ووافقت على [https://meta.wikitide.org/wiki/Terms_of_Use شروط الاستخدام] و[https://meta.wikitide.org/wiki/Privacy_Policy سياسة الخصوصية]",
 	"wikitide-newsignuppage-must-accept-tos": "يجب عليك قبول شروط الاستخدام حتى تتمكن من إنشاء حساب!",
-	"wikitide-oathauth-step1": "'''مهم! يُرجَى التأكد من قراءة <span class=\"plainlinks\">[https://meta.wikitide.com/wiki/OATHAuth OATHAuth]</span> قبل تمكين هذه الإضافة!'''<br/>الخطوة 1: تنزيل برنامج المصادقة الثنائية",
-	"wikitide-prefs-help-realname": "الاسم الحقيقي اختياري، إذا اخترت توفيره، فسيتم استخدامه لمنحك الإحالة إلى عملك، أيضا، باستخدام ويكي يستضيفه ميراهيز، فإنك توافق على <span class=\"plainlinks\">[https://meta.wikitide.com/wiki/Terms_of_Use شروط الاستخدام]</span> وتقبل <span class=\"plainlinks\">[https://meta.wikitide.com/wiki/Privacy_Policy سياسة الخصوصية]</span>",
+	"wikitide-oathauth-step1": "'''مهم! يُرجَى التأكد من قراءة <span class=\"plainlinks\">[https://meta.wikitide.org/wiki/OATHAuth OATHAuth]</span> قبل تمكين هذه الإضافة!'''<br/>الخطوة 1: تنزيل برنامج المصادقة الثنائية",
+	"wikitide-prefs-help-realname": "الاسم الحقيقي اختياري، إذا اخترت توفيره، فسيتم استخدامه لمنحك الإحالة إلى عملك، أيضا، باستخدام ويكي يستضيفه ميراهيز، فإنك توافق على <span class=\"plainlinks\">[https://meta.wikitide.org/wiki/Terms_of_Use شروط الاستخدام]</span> وتقبل <span class=\"plainlinks\">[https://meta.wikitide.org/wiki/Privacy_Policy سياسة الخصوصية]</span>",
 	"wikitide-restriction-delete": "حذف",
 	"wikitide-restriction-protect": "حماية",
 	"wikitide-wikibase-sitelinks-wikitide": "ويكيات ميراهيز"
