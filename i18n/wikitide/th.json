@@ -28,7 +28,7 @@
 	"group-rollbacker": "ผู้ย้อนรวดเดียว",
 	"group-steward-member": "{{GENDER:$1|ผู้ดูแลโครงการ}}",
 	"group-steward": "ผู้ดูแลโครงการ",
-	"group-sysadmin-member": "{{GENDER:$1|ผู้ดูแลระบบโครงข่าย}}",
+	"group-sre-member": "{{GENDER:$1|ผู้ดูแลระบบโครงข่าย}}",
 	"group-sysadmin": "ผู้ดูแลระบบโครงข่าย",
 	"group-translationadmin-member": "ผู้ดูแลระบบการแปลภาษา",
 	"group-translationadmin": "ผู้ดูแลระบบการแปลภาษา",

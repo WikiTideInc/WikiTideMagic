@@ -35,7 +35,7 @@
 	"group-rollbacker": "Шегіндірушілер",
 	"group-steward-member": "{{GENDER:$1|стюарттар}}",
 	"group-steward": "Стюарттар",
-	"group-sysadmin-member": "{{GENDER:$1|жүйе әкімшісі}}",
+	"group-sre-member": "{{GENDER:$1|жүйе әкімшісі}}",
 	"group-sysadmin": "Жүйе әкімшілері",
 	"group-translationadmin-member": "аударма әкімшісі",
 	"group-translationadmin": "Аударма әкімшілері",

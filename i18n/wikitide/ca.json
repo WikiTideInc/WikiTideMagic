@@ -19,7 +19,7 @@
 	"group-rollbacker": "Reversors",
 	"group-steward-member": "{{GENDER:$1|steward}}",
 	"group-steward": "Stewards",
-	"group-sysadmin-member": "{{GENDER:$1|administrador|administradora}} del sistema",
+	"group-sre-member": "{{GENDER:$1|administrador|administradora}} del sistema",
 	"group-sysadmin": "Administradors del sistema",
 	"group-wiki-request-reviewer-member": "{{GENDER:$1|creador de wikis|creadora de wikis}}",
 	"group-wiki-request-reviewer": "Creadors de Wikis",

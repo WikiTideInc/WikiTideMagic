@@ -5,7 +5,7 @@
 		]
 	},
 	"wikitide-centralauth-groupname": "WikiTide",
-	"wikitide-centralauth-login-error-locked": "{{GENDER:$1|侬}}弗好登录因为{{GENDER:$1|侬个}}账号被畀全域锁定。请联系 <code>cvt[at]wikiforge.net</code> 获取更多信息或者申诉",
+	"wikitide-centralauth-login-error-locked": "{{GENDER:$1|侬}}弗好登录因为{{GENDER:$1|侬个}}账号被畀全域锁定。请联系 <code>cvt[at]wikitide.org</code> 获取更多信息或者申诉",
 	"wikitide-newsignuppage-loginform-tos": "我已阅读并且同意\n[https://meta.wikitide.org/wiki/Terms_of_Use 使用条款]搭仔[https://meta.wikitide.org/wiki/Privacy_Policy 隐私政策]",
 	"wikitide-newsignuppage-must-accept-tos": "侬一定要先接受使用条款才可以创建新个账户。",
 	"wikitide-restriction-delete": "删除",

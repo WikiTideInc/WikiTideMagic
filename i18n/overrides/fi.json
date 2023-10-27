@@ -6,7 +6,7 @@
 			"Pyscowicz"
 		]
 	},
-	"wikitide-centralauth-login-error-locked": "{{GENDER:$1|Et}} voi kirjautua sisään, koska {{GENDER:$1|käyttäjäsi}} on [[wt:meta:Special:MyLanguage/Global locks|lukittu järjestelmänlaajuisesti]]. Ota yhteyttä osoitteeseen <code>cvt[at]wikiforge.net</code> saadaksesi lisätietoja tai valittaaksesi",
+	"wikitide-centralauth-login-error-locked": "{{GENDER:$1|Et}} voi kirjautua sisään, koska {{GENDER:$1|käyttäjäsi}} on [[wt:meta:Special:MyLanguage/Global locks|lukittu järjestelmänlaajuisesti]]. Ota yhteyttä osoitteeseen <code>cvt[at]wikitide.org</code> saadaksesi lisätietoja tai valittaaksesi",
 	"wikitide-dberr-again": "Odota muutama minuutti ja lataa sivu uudelleen. Saadaksesi lisätietoja tästä virheestä katso Twitter-sivumme (https://twitter.com/WikiTide) tai ota yhteyttä järjestelmän ylläpitäjiin kanavalla #wikiforge palvelimella irc.libera.chat.",
 	"wikitide-newsignuppage-loginform-tos": "Olen lukenut, ymmärtänyt ja hyväksyn [https://meta.wikitide.org/wiki/Special:MyLanguage/Terms_of_Use käyttöehdot] ja [https://meta.wikitide.org/wiki/Special:MyLanguage/Privacy_Policy tietosuojakäytännön]",
 	"wikitide-newsignuppage-must-accept-tos": "Sinun täytyy hyväksyä käyttöehdot voidaksesi luoda käyttäjän!",

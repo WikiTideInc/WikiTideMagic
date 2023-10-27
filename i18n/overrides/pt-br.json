@@ -7,7 +7,7 @@
 		]
 	},
 	"wikitide-centralauth-groupname": "WikiTide",
-	"wikitide-centralauth-login-error-locked": "{{GENDER:$1|Você}} não pode entrar pois {{GENDER:$1|sua}} conta está travada globalmente. Por favor contate <code>cvt[em]wikiforge.net</code> para mais informações ou para apelar",
+	"wikitide-centralauth-login-error-locked": "{{GENDER:$1|Você}} não pode entrar pois {{GENDER:$1|sua}} conta está travada globalmente. Por favor contate <code>cvt[em]wikitide.org</code> para mais informações ou para apelar",
 	"wikitide-dberr-again": "Tente esperar alguns minutos e recarregar. Para mais informações sobre esse erro, confira nossa página no Twitter (Twitter.com/WikiTide) ou entre em contato com os administradores do sistema conectando-se a #wikiforge em irc.libera.chat",
 	"wikitide-newsignuppage-loginform-tos": "Eu li, compreendi e concordo com o [https://meta.wikitide.org/wiki/Terms_of_Use/pt-br Termos de uso] e [https://meta.wikitide.org/wiki/Privacy_Policy/pt-br Política de Privacidade]",
 	"wikitide-newsignuppage-must-accept-tos": "Você deve aceitar os Termos de Uso para poder criar uma conta!",
