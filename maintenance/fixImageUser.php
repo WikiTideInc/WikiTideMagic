@@ -39,8 +39,8 @@ class FixImageUser extends Maintenance {
 	public function execute() {
 		$wikiDB = $this->getDB( DB_PRIMARY );
 
-		$from = $this->initialiseUser( urldecode( $this->getArg( 0 ) ) );
-		$to = $this->initialiseUser( urldecode( $this->getArg( 1 ) ) );
+		$from = $this->initializeUser( urldecode( $this->getArg( 0 ) ) );
+		$to = $this->initializeUser( urldecode( $this->getArg( 1 ) ) );
 
 		$imageName = urldecode( $this->getOption( 'image-name' ) );
 
@@ -87,12 +87,12 @@ class FixImageUser extends Maintenance {
 	}
 
 	/**
-	 * Initialise the user object
+	 * Initialize the user object
 	 *
 	 * @param string $username Username or IP address
 	 * @return User
 	 */
-	private function initialiseUser( $username ) {
+	private function initializeUser( $username ) {
 		if ( User::isIP( $username ) ) {
 			$user = new User();
 			$user->setId( 0 );
