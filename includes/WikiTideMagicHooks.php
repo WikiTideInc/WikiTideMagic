@@ -121,7 +121,7 @@ class WikiTideMagicHooks implements
 	}
 
 	public function onCreateWikiDeletion( $cwdb, $wiki ): void {
-		global $wmgAWSAccessKey, $wmgAWSAccessSecretKey;
+		global $wmgAWSAccessKey, $wmgAWSAccessSecretKey, $wmgAWSS3Endpoint;
 
 		$dbw = MediaWikiServices::getInstance()->getDBLoadBalancerFactory()
 			->getMainLB( $this->options->get( 'EchoSharedTrackingDB' ) )
@@ -146,7 +146,7 @@ class WikiTideMagicHooks implements
 		if ( substr( $wiki, -8 ) === 'wikitide' ) {
 			// phpcs:ignore MediaWiki.Usage.ForbiddenFunctions
 			exec( escapeshellcmd(
-				"AWS_ACCESS_KEY_ID={$wmgAWSAccessKey} AWS_SECRET_ACCESS_KEY={$wmgAWSAccessSecretKey} aws s3 --recursive rm s3://{$this->options->get( 'AWSBucketName' )}/{$wiki}"
+				"AWS_ACCESS_KEY_ID={$wmgAWSAccessKey} AWS_SECRET_ACCESS_KEY={$wmgAWSAccessSecretKey} aws s3 --endpoint-url {$wmgAWSS3Endpoint} --recursive rm s3://{$this->options->get( 'AWSBucketName' )}/{$wiki}"
 			) );
 		}
 
@@ -155,7 +155,7 @@ class WikiTideMagicHooks implements
 	}
 
 	public function onCreateWikiRename( $cwdb, $old, $new ): void {
-		global $wmgAWSAccessKey, $wmgAWSAccessSecretKey;
+		global $wmgAWSAccessKey, $wmgAWSAccessSecretKey, $wmgAWSS3Endpoint;
 
 		$dbw = MediaWikiServices::getInstance()->getDBLoadBalancerFactory()
 			->getMainLB( $this->options->get( 'EchoSharedTrackingDB' ) )
@@ -180,7 +180,7 @@ class WikiTideMagicHooks implements
 		if ( substr( $old, -8 ) === 'wikitide' && substr( $new, -8 ) === 'wikitide' ) {
 			// phpcs:ignore MediaWiki.Usage.ForbiddenFunctions
 			exec( escapeshellcmd(
-				"AWS_ACCESS_KEY_ID={$wmgAWSAccessKey} AWS_SECRET_ACCESS_KEY={$wmgAWSAccessSecretKey} aws s3 --recursive mv s3://{$this->options->get( 'AWSBucketName' )}/{$old} s3://{$this->options->get( 'AWSBucketName' )}/{$new}"
+				"AWS_ACCESS_KEY_ID={$wmgAWSAccessKey} AWS_SECRET_ACCESS_KEY={$wmgAWSAccessSecretKey} aws s3 --endpoint-url {$wmgAWSS3Endpoint} --recursive mv s3://{$this->options->get( 'AWSBucketName' )}/{$old} s3://{$this->options->get( 'AWSBucketName' )}/{$new}"
 			) );
 		}
 
