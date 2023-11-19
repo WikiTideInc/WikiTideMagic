@@ -82,8 +82,8 @@ class WikiTideMagicHooks implements
 					'LanguageCode',
 					'LocalDatabases',
 					'ManageWikiSettings',
-					'ObjectCaches',
 					'Script',
+					'WikiTideMagicMemcachedServer',
 				],
 				$mainConfig
 			),
@@ -582,7 +582,7 @@ class WikiTideMagicHooks implements
 
 	/** Remove memcached keys */
 	private function removeMemcachedKey( string $key ) {
-		$memcacheServer = explode( ':', $this->options->get( 'ObjectCaches' )['memcached']['servers'][0] );
+		$memcacheServer = explode( ':', $this->options->get( 'WikiTideMagicMemcachedServer' ) );
 
 		try {
 			$memcached = new Memcached();

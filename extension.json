@@ -35,6 +35,10 @@
 		"SpecialVanishUser": "includes/SpecialVanishUser.php"
 	},
 	"config": {
+		"WikiTideMagicMemcachedServer": {
+			"description": "String. Memcached server to use for clearing memcached keys when a wiki is deleted or renamed",
+			"value": ""
+		},
 		"WikiTideReportsBlockAlertKeywords": {
 			"description": "Array. Words in block reasons which trigger a report being sent to TSPortal.",
 			"value": []
