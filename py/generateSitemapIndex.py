@@ -5,21 +5,20 @@ import requests
 import xmltodict
 import os
 import argparse
-import boto3
-from botocore.exceptions import NoCredentialsError
+from swiftclient import Connection
 from time import sleep
 
 parser = argparse.ArgumentParser(
-    description='Generate WikiTide sitemap index of all public wikis, and upload the object to an S3 bucket')
+    description='Generate WikiTide sitemap index of all public wikis, and upload the object to the "root" container in Swift')
 parser.add_argument(
-    '-B', '--bucket', dest='bucket', required=True,
-    help='Name of the S3 bucket')
+    '-A', '--auth', dest='auth', default=os.environ.get('ST_AUTH', None),
+    help='URL for obtaining an auth token for Swift (ST_AUTH)')
 parser.add_argument(
-    '-K', '--access-key', dest='access_key', default=os.environ.get('AWS_ACCESS_KEY_ID', None),
-    help='Access key for AWS')
+    '-U', '--user', dest='user', default=os.environ.get('ST_USER', None),
+    help='User name for obtaining an auth token for Swift (ST_USER)')
 parser.add_argument(
-    '-S', '--secret-key', dest='secret_key', default=os.environ.get('AWS_SECRET_ACCESS_KEY', None),
-    help='Secret key for AWS')
+    '-K', '--key', dest='key', default=os.environ.get('ST_KEY', None),
+    help='Key for obtaining an auth token for Swift (ST_KEY)')
 args = parser.parse_args()
 
 reqsession = requests.Session()
@@ -47,14 +46,14 @@ for wikidata in data:
         count = 0
         hits = hits + 1
     wiki = wikidata['dbname']
-    urlreq = f'https://static.wikiforge.net/{wiki}/sitemaps/sitemap.xml'
+    urlreq = f'https://static.wikitide.net/{wiki}/sitemaps/sitemap.xml'
     req = reqsession.get(url=urlreq)
     if req.status_code == 429:
         print(f'Rate Limited on {wiki} backing off for {1 + int(rls)} seconds')
         sleep(1 + int(rls))  # sleep 1 second for every time rate limited
         req = reqsession.get(url=urlreq)
         rls = rls + 1
-    while req.status_code == 502 or req.status_code == 503:  # WikiForge might be down, pause for a bit
+    while req.status_code == 502 or req.status_code == 503:  # WikiTide might be down, try again in a bit bit
         secondswait = 3 * down
         down = down + 1
         print(f'Got 5xx error on {urlreq} - waiting for {secondswait} seconds')
@@ -77,7 +76,6 @@ for wikidata in data:
     except KeyError as e:
         print(f'Caught exception {str(e)} while parsing "{urlreq}"')  # Sitemap data is not actually saved in this sitemap! Ignore
     sleep(0.5)  # sleep half a second after each one
-
 lines = '<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
 for sitemap in maps:
     date = datetime.now()
@@ -88,14 +86,11 @@ for sitemap in maps:
 
 lines += '\n</sitemapindex>'
 
-s3 = boto3.client('s3', aws_access_key_id=args.access_key, aws_secret_access_key=args.secret_key)
-try:
-    s3.put_object(
-        Bucket=args.bucket,
-        Key='sitemap-wikitide.xml',
-        Body=lines,
-        ContentType='application/xml',
-    )
-    print('done')
-except NoCredentialsError:
-    print('AWS credentials not found. Please provide valid access key and secret key.')
+conn = Connection(args.auth, args.user, args.key, retry_on_ratelimit=True)
+conn.put_object(
+    'root',
+    'sitemap.xml',
+    contents=lines,
+    content_type='application/xml',
+)
+print('done')
