@@ -120,7 +120,7 @@ class WikiTideMagicHooks implements
 	}
 
 	public function onCreateWikiDeletion( $cwdb, $wiki ): void {
-		global $wmgAWSAccessKey, $wmgAWSAccessSecretKey, $wmgAWSS3Endpoint;
+		global $wmgSwiftPassword;
 
 		$dbw = MediaWikiServices::getInstance()->getDBLoadBalancerFactory()
 			->getMainLB( $this->options->get( 'EchoSharedTrackingDB' ) )
@@ -142,11 +142,38 @@ class WikiTideMagicHooks implements
 			}
 		}
 
-		if ( substr( $wiki, -8 ) === 'wikitide' ) {
-			// phpcs:ignore MediaWiki.Usage.ForbiddenFunctions
-			exec( escapeshellcmd(
-				"AWS_ACCESS_KEY_ID={$wmgAWSAccessKey} AWS_SECRET_ACCESS_KEY={$wmgAWSAccessSecretKey} aws s3 --endpoint-url {$wmgAWSS3Endpoint} --recursive rm s3://{$this->options->get( 'AWSBucketName' )}/{$wiki}"
-			) );
+		$limits = [ 'memory' => 0, 'filesize' => 0, 'time' => 0, 'walltime' => 0 ];
+
+		// Get a list of containers to delete for the wiki
+		$containers = explode( "\n",
+			trim( Shell::command(
+				'swift', 'list',
+				'--prefix', 'wikitide-' . $wiki . '-',
+				'-A', 'https://swift-lb.wikitide.net/auth/v1.0',
+				'-U', 'mw:media',
+				'-K', $wmgSwiftPassword
+			)->limits( $limits )
+				->restrict( Shell::RESTRICT_NONE )
+				->execute()->getStdout()
+			)
+		);
+
+		foreach ( $containers as $container ) {
+			// Just an extra precaution to ensure we don't select the wrong containers
+			if ( !str_contains( $container, $wiki . '-' ) ) {
+				continue;
+			}
+
+			// Delete the container
+			Shell::command(
+				'swift', 'delete',
+				$container,
+				'-A', 'https://swift-lb.wikitide.net/auth/v1.0',
+				'-U', 'mw:media',
+				'-K', $wmgSwiftPassword
+			)->limits( $limits )
+				->restrict( Shell::RESTRICT_NONE )
+				->execute();
 		}
 
 		$this->removeRedisKey( "*{$wiki}*" );
@@ -154,7 +181,7 @@ class WikiTideMagicHooks implements
 	}
 
 	public function onCreateWikiRename( $cwdb, $old, $new ): void {
-		global $wmgAWSAccessKey, $wmgAWSAccessSecretKey, $wmgAWSS3Endpoint;
+		global $wmgSwiftPassword;
 
 		$dbw = MediaWikiServices::getInstance()->getDBLoadBalancerFactory()
 			->getMainLB( $this->options->get( 'EchoSharedTrackingDB' ) )
@@ -176,12 +203,120 @@ class WikiTideMagicHooks implements
 			}
 		}
 
-		if ( substr( $old, -8 ) === 'wikitide' && substr( $new, -8 ) === 'wikitide' ) {
+		$limits = [ 'memory' => 0, 'filesize' => 0, 'time' => 0, 'walltime' => 0 ];
+
+		// Get a list of containers to download, and later upload for the wiki
+		$containers = explode( "\n",
+			trim( Shell::command(
+				'swift', 'list',
+				'--prefix', 'wikitide-' . $old . '-',
+				'-A', 'https://swift-lb.wikitide.net/auth/v1.0',
+				'-U', 'mw:media',
+				'-K', $wmgSwiftPassword
+			)->limits( $limits )
+				->restrict( Shell::RESTRICT_NONE )
+				->execute()->getStdout()
+			)
+		);
+
+		foreach ( $containers as $container ) {
+			// Just an extra precaution to ensure we don't select the wrong containers
+			if ( !str_contains( $container, $old . '-' ) ) {
+				continue;
+			}
+
+			// Get a list of all files in the container to ensure everything is present in new container later.
+			$oldContainerList = Shell::command(
+				'swift', 'list',
+				$container,
+				'-A', 'https://swift-lb.wikitide.net/auth/v1.0',
+				'-U', 'mw:media',
+				'-K', $wmgSwiftPassword
+			)->limits( $limits )
+				->restrict( Shell::RESTRICT_NONE )
+				->execute()->getStdout();
+
+			// Download the container
+			Shell::command(
+				'swift', 'download',
+				$container,
+				'-D', wfTempDir() . '/' . $container,
+				'-A', 'https://swift-lb.wikitide.net/auth/v1.0',
+				'-U', 'mw:media',
+				'-K', $wmgSwiftPassword
+			)->limits( $limits )
+				->restrict( Shell::RESTRICT_NONE )
+				->execute();
+
+			$newContainer = str_replace( $old, $new, $container );
+
+			// Upload to new container
+			// We have to use exec here, as Shell::command does not work for this
 			// phpcs:ignore MediaWiki.Usage.ForbiddenFunctions
 			exec( escapeshellcmd(
-				"AWS_ACCESS_KEY_ID={$wmgAWSAccessKey} AWS_SECRET_ACCESS_KEY={$wmgAWSAccessSecretKey} aws s3 --endpoint-url {$wmgAWSS3Endpoint} --recursive mv s3://{$this->options->get( 'AWSBucketName' )}/{$old} s3://{$this->options->get( 'AWSBucketName' )}/{$new}"
+				implode( ' ', [
+					'swift', 'upload',
+					$newContainer,
+					wfTempDir() . '/' . $container,
+					'--object-name', '""',
+					'-A', 'https://swift-lb.wikitide.net/auth/v1.0',
+					'-U', 'mw:media',
+					'-K', $wmgSwiftPassword
+				] )
 			) );
+
+			wfDebugLog( 'WikiTideMagic', "Container '$newContainer' created." );
+
+			$newContainerList = Shell::command(
+				'swift', 'list',
+				$newContainer,
+				'-A', 'https://swift-lb.wikitide.net/auth/v1.0',
+				'-U', 'mw:media',
+				'-K', $wmgSwiftPassword
+			)->limits( $limits )
+				->restrict( Shell::RESTRICT_NONE )
+				->execute()->getStdout();
+
+			if ( $newContainerList === $oldContainerList ) {
+				// Everything has been correctly copied over
+				// wipe files from the temp directory and delete old container
+
+				// Delete the container
+				Shell::command(
+					'swift', 'delete',
+					$container,
+					'-A', 'https://swift-lb.wikitide.net/auth/v1.0',
+					'-U', 'mw:media',
+					'-K', $wmgSwiftPassword
+				)->limits( $limits )
+					->restrict( Shell::RESTRICT_NONE )
+					->execute();
+
+				wfDebugLog( 'WikiTideMagic', "Container '$container' deleted." );
+
+				// Wipe from the temp directory
+				Shell::command( '/bin/rm', '-rf', wfTempDir() . '/' . $container )
+					->limits( $limits )
+					->restrict( Shell::RESTRICT_NONE )
+					->execute();
+			} else {
+				/**
+				 * We need to log this, as otherwise all files may not have been succesfully
+				 * moved to the new container, and they still exist locally. We should know that.
+				 */
+				wfDebugLog( 'WikiTideMagic', "The rename of wiki $old to $new may not have been successful. Files still exist locally in {wfTempDir()} and the Swift containers for the old wiki still exist." );
+			}
 		}
+
+		$scriptOptions = [ 'wrapper' => MW_INSTALL_PATH . '/maintenance/run.php' ];
+
+		Shell::makeScriptCommand(
+			MW_INSTALL_PATH . '/extensions/CreateWiki/maintenance/setContainersAccess.php',
+			[
+				'--wiki', $new
+			],
+			$scriptOptions
+		)->limits( $limits )->execute();
 
 		$this->removeRedisKey( "*{$old}*" );
 		$this->removeMemcachedKey( ".*{$old}.*" );
@@ -218,7 +353,7 @@ class WikiTideMagicHooks implements
 	}
 
 	public function onCreateWikiReadPersistentModel( &$pipeline ): void {
-		$backend = MediaWikiServices::getInstance()->getFileBackendGroup()->get( 'AmazonS3' );
+		$backend = MediaWikiServices::getInstance()->getFileBackendGroup()->get( 'wikitide-swift' );
 		if ( $backend->fileExists( [ 'src' => $backend->getContainerStoragePath( 'createwiki-persistent-model' ) . '/requestmodel.phpml' ] ) ) {
 			$pipeline = unserialize(
 				$backend->getFileContents( [
@@ -229,7 +364,7 @@ class WikiTideMagicHooks implements
 	}
 
 	public function onCreateWikiWritePersistentModel( $pipeline ): bool {
-		$backend = MediaWikiServices::getInstance()->getFileBackendGroup()->get( 'AmazonS3' );
+		$backend = MediaWikiServices::getInstance()->getFileBackendGroup()->get( 'wikitide-swift' );
 		$backend->prepare( [ 'dir' => $backend->getContainerStoragePath( 'createwiki-persistent-model' ) ] );
 
 		$backend->quickCreate( [
