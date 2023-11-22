@@ -74,7 +74,6 @@ class WikiTideMagicHooks implements
 			new ServiceOptions(
 				[
 					'ArticlePath',
-					'AWSBucketName',
 					'CreateWikiCacheDirectory',
 					'CreateWikiGlobalWiki',
 					'EchoSharedTrackingDB',
