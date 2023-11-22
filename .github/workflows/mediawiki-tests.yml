@@ -66,26 +66,26 @@ jobs:
   notify-irc:
     needs: call-mediawiki-tests-workflow
     runs-on: ubuntu-latest
-    if: ${{ always() && github.repository_owner == 'WikiForge' && ( github.ref == 'refs/heads/master' || github.event_name == 'pull_request' ) }}
+    if: ${{ always() && github.repository_owner == 'WikiTideOrg' && ( github.ref == 'refs/heads/master' || github.event_name == 'pull_request' ) }}
     steps:
       - name: succeeded
         uses: technote-space/workflow-conclusion-action@v3
       - uses: rectalogic/notify-irc@v2
         if: env.WORKFLOW_CONCLUSION == 'success'
         with:
-          channel: "#wikiforge-sre"
+          channel: "#wikitide-sre"
           server: "irc.libera.chat"
-          nickname: wikiforge-github
+          nickname: wikitide-github
           message: ${{ github.repository }} - ${{ github.actor }} the build passed.
-          sasl_password: ${{ secrets.IRC_WIKIFORGEBOTS }}
+          sasl_password: ${{ secrets.IRC_WIKITIDEBOTS }}
 
       - name: failed
         uses: technote-space/workflow-conclusion-action@v3
       - uses: rectalogic/notify-irc@v2
         if: env.WORKFLOW_CONCLUSION == 'failure'
         with:
-          channel: "#wikiforge-sre"
+          channel: "#wikitide-sre"
           server: "irc.libera.chat"
-          nickname: wikiforge-github
+          nickname: wikitide-github
           message: ${{ github.repository }} - ${{ github.actor }} the build has errored.
-          sasl_password: ${{ secrets.IRC_WIKIFORGEBOTS }}
+          sasl_password: ${{ secrets.IRC_WIKITIDEBOTS }}

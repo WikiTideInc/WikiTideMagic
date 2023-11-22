@@ -12,7 +12,7 @@
 		]
 	},
 	"wikitide-centralauth-login-error-locked": "Hesabınız küresel olarak kilitlendiği için oturum {{GENDER:$1|açamazsınız}}. Daha fazla bilgi almak veya itiraz etmek için lütfen <code>cvt[at]wikitide.org</code> ile iletişime geçin.",
-	"wikitide-dberr-again": "Birkaç dakika beklemeyi ve tekrar yüklemeyi deneyin. Bu hata hakkında daha fazla bilgi için lütfen twitter sayfamıza (https://twitter.com/WikiTide) göz atın veya irc.libera.chat adresindeki #wikiforge-sre ağına bağlanarak sistem hizmetlileriyle iletişime geçin.",
+	"wikitide-dberr-again": "Birkaç dakika beklemeyi ve tekrar yüklemeyi deneyin. Bu hata hakkında daha fazla bilgi için lütfen twitter sayfamıza (https://twitter.com/WikiTide) göz atın veya irc.libera.chat adresindeki #wikitide-sre ağına bağlanarak sistem hizmetlileriyle iletişime geçin.",
 	"wikitide-dberr-problems": "Bu viki geçici olarak mevcut değildir",
 	"wikitide-newsignuppage-loginform-tos": "[https://meta.wikitide.org/wiki/Terms_of_Use/tr Kullanım Şartları] ve [https://meta.wikitide.org/wiki/Privacy_Policy/tr Gizlilik Politikasını] okudum, anladım ve kabul ediyorum.",
 	"wikitide-newsignuppage-must-accept-tos": "Hesap açabilmek için Kullanım Şartlarını kabul etmelisin!",
