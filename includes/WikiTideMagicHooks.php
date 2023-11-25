@@ -348,8 +348,8 @@ class WikiTideMagicHooks implements
 	}
 
 	public function onCreateWikiTables( &$cTables ): void {
-		$tables['localnames'] = 'ln_wiki';
-		$tables['localuser'] = 'lu_wiki';
+		$cTables['localnames'] = 'ln_wiki';
+		$cTables['localuser'] = 'lu_wiki';
 	}
 
 	public function onCreateWikiReadPersistentModel( &$pipeline ): void {
