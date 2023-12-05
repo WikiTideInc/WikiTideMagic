@@ -7,12 +7,18 @@ $wgHooks['MediaWikiServices'][] = 'wfOnMediaWikiServices';
 
 function wfOnMediaWikiServices( MediaWikiServices $services ) {
 	try {
-		global $IP;
-		$dbw = wfInitDBConnection();
-
-		if ( !$dbw->tableExists( 'echo_unread_wikis' ) ) {
-			$dbw->sourceFile( "$IP/extensions/Echo/sql/mysql/tables-sharedtracking-generated.sql" );
+		if ( getenv( 'ECHO_SQL_EXECUTED' ) ) {
+			return;
 		}
+
+		$db = wfInitDBConnection();
+
+		$db->selectDomain( 'wikidb' );
+		if ( !$db->tableExists( 'echo_unread_wikis' ) ) {
+			$db->sourceFile( MW_INSTALL_PATH . '/extensions/Echo/sql/mysql/tables-sharedtracking-generated.sql' );
+		}
+
+		putenv( 'ECHO_SQL_EXECUTED=true' );
 	} catch ( DBQueryError $e ) {
 		return;
 	}
