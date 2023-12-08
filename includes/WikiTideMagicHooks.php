@@ -14,6 +14,7 @@ use MediaWiki\Hook\SkinAddFooterLinksHook;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Permissions\Hook\TitleReadWhitelistHook;
 use MediaWiki\Preferences\Hook\GetPreferencesHook;
+use MediaWiki\Shell\Shell;
 use MediaWiki\User\UserOptionsManager;
 use WikiForge\CreateWiki\Hooks\CreateWikiDeletionHook;
 use WikiForge\CreateWiki\Hooks\CreateWikiReadPersistentModelHook;
