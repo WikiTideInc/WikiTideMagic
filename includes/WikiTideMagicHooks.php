@@ -583,8 +583,8 @@ class WikiTideMagicHooks implements
 
 	public function onGlobalUserPageWikis( &$list ) {
 		$cwCacheDir = $this->options->get( 'CreateWikiCacheDirectory' );
-		if ( file_exists( "{$cwCacheDir}/databases-wikitide.json" ) ) {
-			$databasesArray = json_decode( file_get_contents( "{$cwCacheDir}/databases-wikitide.json" ), true );
+		if ( file_exists( "{$cwCacheDir}/databases.json" ) ) {
+			$databasesArray = json_decode( file_get_contents( "{$cwCacheDir}/databases.json" ), true );
 			$list = array_keys( $databasesArray['combi'] );
 			return false;
 		}
