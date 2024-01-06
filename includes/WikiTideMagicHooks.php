@@ -16,13 +16,13 @@ use MediaWiki\Permissions\Hook\TitleReadWhitelistHook;
 use MediaWiki\Preferences\Hook\GetPreferencesHook;
 use MediaWiki\Shell\Shell;
 use MediaWiki\User\UserOptionsManager;
+use Miraheze\ManageWiki\Helpers\ManageWikiSettings;
 use WikiForge\CreateWiki\Hooks\CreateWikiDeletionHook;
 use WikiForge\CreateWiki\Hooks\CreateWikiReadPersistentModelHook;
 use WikiForge\CreateWiki\Hooks\CreateWikiRenameHook;
 use WikiForge\CreateWiki\Hooks\CreateWikiStatePrivateHook;
 use WikiForge\CreateWiki\Hooks\CreateWikiTablesHook;
 use WikiForge\CreateWiki\Hooks\CreateWikiWritePersistentModelHook;
-use WikiForge\ManageWiki\Helpers\ManageWikiSettings;
 use Wikimedia\IPUtils;
 
 class WikiTideMagicHooks implements
