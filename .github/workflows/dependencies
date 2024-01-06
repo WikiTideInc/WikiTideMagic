@@ -15,4 +15,4 @@ GlobalUserPage:
   repo: auto
 ManageWiki:
   branch: master
-  repo: https://github.com/WikiForge/ManageWiki
+  repo: https://github.com/miraheze/ManageWiki
