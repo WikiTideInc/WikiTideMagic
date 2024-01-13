@@ -9,7 +9,7 @@ require_once "$IP/maintenance/Maintenance.php";
 
 use MediaWiki\MediaWikiServices;
 use Miraheze\ManageWiki\Helpers\ManageWikiSettings;
-use WikiForge\CreateWiki\RemoteWiki;
+use Miraheze\CreateWiki\RemoteWiki;
 
 class UpdatePrivateAuthUrls extends Maintenance {
 	public function execute() {
