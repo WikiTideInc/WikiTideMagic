@@ -6,7 +6,7 @@ CentralAuth:
   repo: auto
 CreateWiki:
   branch: master
-  repo: https://github.com/WikiForge/CreateWiki
+  repo: https://github.com/miraheze/CreateWiki
 Echo:
   branch: auto
   repo: auto

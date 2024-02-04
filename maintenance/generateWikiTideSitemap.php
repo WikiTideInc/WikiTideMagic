@@ -26,7 +26,7 @@
 require_once __DIR__ . '/../../../maintenance/Maintenance.php';
 
 use MediaWiki\MediaWikiServices;
-use WikiForge\CreateWiki\RemoteWiki;
+use Miraheze\CreateWiki\RemoteWiki;
 
 class GenerateWikiTideSitemap extends Maintenance {
 	public function __construct() {
