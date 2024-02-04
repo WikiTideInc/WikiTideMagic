@@ -1,3 +1,8 @@
+# ARCHIVED
+See [miraheze/MirahezeMagic](https://github.com/miraheze/MirahezeMagic)
+
+# WikiTideMagic
+
 Collection of customized i18n messages for WikiTide. Traslations are welcome through translatewiki.net.
 
 Licensed under the GPLv3 (or later) LICENSE.
